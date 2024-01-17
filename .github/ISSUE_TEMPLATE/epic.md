@@ -9,6 +9,6 @@ assignees: aklambert
 
 **Epic/ User Story Description**:
 
-**Components:**
+**Functions/Components:**
 
 **Any notes, images, flows or resources that may be helpful:**
