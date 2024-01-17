@@ -7,17 +7,17 @@ assignees: aklambert
 
 ---
 
-**Bug Description:**
+## Bug Description:
 
-**Steps To Reproduce:**
+## Steps To Reproduce:
 
-**Expected behavior:**
+## Expected behavior:
 
-**Screenshots:**
+## Screenshots:
 
-**Desktop (please complete the following information):**
+## Desktop (please complete the following information):
  - OS:
  - Browser
  - Version
 
-**Additional context:**
+## Additional context:

@@ -1,13 +1,11 @@
 ---
-name: Issue Part of Epic
-about: Describe this issue for an epic below.
+name: Issue Not Part of Epic
+about: Describe the issue below.
 title: ''
 labels: ''
 assignees: aklambert
 
 ---
-
-## Epic:
 
 ## Epic Issue Description:
 

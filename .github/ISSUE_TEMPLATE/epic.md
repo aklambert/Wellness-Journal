@@ -7,8 +7,8 @@ assignees: aklambert
 
 ---
 
-**Epic/ User Story Description**:
+## Epic/ User Story Description:
 
-**Functions/Components:**
+## Functions/Components:
 
-**Any notes, images, flows or resources that may be helpful:**
+## Any notes, images, flows or resources that may be helpful:
