@@ -1,5 +1,5 @@
 ---
-name: Epic Issue
+name: Issue Part of Epic
 about: Describe this issue for an epic below.
 title: ''
 labels: ''
