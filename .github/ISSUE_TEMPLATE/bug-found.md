@@ -2,7 +2,7 @@
 name: Bug Found
 about: Describe the bug below so it can be taken care of.
 title: ''
-labels: ''
+labels: Scoping Epic
 assignees: aklambert
 
 ---
