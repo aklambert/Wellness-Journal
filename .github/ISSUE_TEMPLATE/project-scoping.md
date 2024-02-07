@@ -2,7 +2,7 @@
 name: Project Scoping
 about: Scope the overall project/ determine major features/ components.
 title: ''
-labels: Scoping Epic
+labels: ''
 assignees: aklambert
 
 ---

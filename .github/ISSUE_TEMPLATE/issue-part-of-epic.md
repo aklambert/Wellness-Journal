@@ -9,7 +9,9 @@ assignees: aklambert
 
 ## Epic:
 
-## Epic Issue Description:
+## Issue Description:
+
+## System Requirements:
 
 ## Any images/ user flows that may be helpful:
 
