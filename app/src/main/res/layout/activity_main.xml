@@ -33,9 +33,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Testing"
+        android:layout_width="208dp"
+        android:layout_height="186dp"
+        android:text="Testing git setup with android studio! this will change later"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/nav_host_fragment_activity_main"
