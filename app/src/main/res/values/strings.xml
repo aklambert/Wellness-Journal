@@ -3,4 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="Hello">Hello!</string>
+    <string name="welcome_message">Welcome to Fitness Journal, where you can customize fitness
+        tracking and journaling all in one place.</string>
+    <string name="btn_begin">Begin</string>
+    <string name="logo_weight_description">Logo weight</string>
 </resources>
