@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentHomeBinding
 
@@ -44,13 +45,11 @@ class HomeFragment : Fragment() {
         // Check if user has clicked the BEGIN button before, and move right to Home Screen if they have
         val prefs = this.requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
 
-
         var tv = root.findViewById<TextView>(R.id.txt_hello) as TextView
-        tv.setText("opened app");
 
         if (prefs.contains("welcome_screen_disable") && prefs.getBoolean("welcome_screen_disable", true)) {
             // Startup screen for user is the home screen
-            tv.setText("disabled")
+            findNavController().navigate(R.id.navigation_dashboard)
         }
 
         /* Listen for when the user clicks the BEGIN button on the welcome screen, and take note so that the welcome screen
@@ -61,7 +60,10 @@ class HomeFragment : Fragment() {
             // Set shared preference setting to prevent welcome screen from appearing again
             val prefsEditor: SharedPreferences.Editor = prefs.edit()
             prefsEditor.putBoolean("welcome_screen_disable", true)
-            prefsEditor.commit()
+            prefsEditor.apply()
+
+            // Move to home screen
+            findNavController().navigate(R.id.navigation_dashboard)
         }
 
         return root
