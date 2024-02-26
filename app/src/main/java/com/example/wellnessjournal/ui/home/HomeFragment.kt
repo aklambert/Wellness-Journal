@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class HomeFragment : Fragment() {
@@ -29,8 +29,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -44,8 +43,6 @@ class HomeFragment : Fragment() {
 
         // Check if user has clicked the BEGIN button before, and move right to Home Screen if they have
         val prefs = this.requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
-
-        var tv = root.findViewById<TextView>(R.id.txt_hello) as TextView
 
         if (prefs.contains("welcome_screen_disable") && prefs.getBoolean("welcome_screen_disable", true)) {
             // Startup screen for user is the home screen
@@ -64,6 +61,10 @@ class HomeFragment : Fragment() {
 
             // Move to home screen
             findNavController().navigate(R.id.navigation_dashboard)
+
+            // Make sure bottom navigation bar is showing
+            val navView: BottomNavigationView = requireActivity().findViewById(R.id.nav_view)
+            navView.visibility = View.VISIBLE
         }
 
         return root

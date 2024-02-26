@@ -1,12 +1,8 @@
 package com.example.wellnessjournal
-
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isInvisible
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -36,6 +32,17 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        val currentNavPosition = navController.currentDestination
 
+        // Don't show bottom navigation bar for Welcome screen, but do show it for all other screens
+        if (currentNavPosition != null) {
+            if(currentNavPosition.label == "Home") {
+                navView.visibility = View.GONE
+            }
+            else {
+
+                navView.visibility = View.VISIBLE
+            }
+        }
     }
 }
