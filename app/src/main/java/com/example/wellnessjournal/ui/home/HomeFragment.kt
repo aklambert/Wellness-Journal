@@ -1,13 +1,19 @@
 package com.example.wellnessjournal.ui.home
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class HomeFragment : Fragment() {
 
@@ -22,16 +28,45 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+
+        val homeViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        // commenting this for now because I may learn from it/ use it later
+        /*
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
+        }*/
+
+        // Check if user has clicked the BEGIN button before, and move right to Home Screen if they have
+        val prefs = this.requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
+
+        if (prefs.contains("welcome_screen_disable") && prefs.getBoolean("welcome_screen_disable", true)) {
+            // Startup screen for user is the home screen
+            findNavController().navigate(R.id.navigation_dashboard)
         }
+
+        /* Listen for when the user clicks the BEGIN button on the welcome screen, and take note so that the welcome screen
+         does not show again */
+        val btnBegin = root.findViewById<Button>(R.id.btn_begin) as Button
+        btnBegin.setOnClickListener {
+
+            // Set shared preference setting to prevent welcome screen from appearing again
+            val prefsEditor: SharedPreferences.Editor = prefs.edit()
+            prefsEditor.putBoolean("welcome_screen_disable", true)
+            prefsEditor.apply()
+
+            // Move to home screen
+            findNavController().navigate(R.id.navigation_dashboard)
+
+            // Make sure bottom navigation bar is showing
+            val navView: BottomNavigationView = requireActivity().findViewById(R.id.nav_view)
+            navView.visibility = View.VISIBLE
+        }
+
         return root
     }
 
