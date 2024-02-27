@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_welcome_screen_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".ui.welcome.WelcomeFragment">
+
+    <TextView
+        android:id="@+id/txt_welcome_message"
+        android:layout_width="307dp"
+        android:layout_height="165dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="start"
+        android:lineSpacingExtra="10sp"
+        android:text="@string/welcome_message"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textSize="@dimen/welcome_msg_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.759"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/txt_hello"
+        style="@style/style_title"
+        android:layout_width="284dp"
+        android:layout_height="151dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:text="@string/Hello"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/txt_welcome_message"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_begin"
+        style="@style/btn_secondary"
+        android:layout_width="139dp"
+        android:layout_height="72dp"
+        android:text="@string/btn_begin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_welcome_message"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="@color/primary_color_variant2"
+        android:textColorHighlight="@color/primary_color"
+        android:textColorLink="@color/primary_color_variant1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="153dp"
+        android:layout_height="174dp"
+        android:contentDescription="@string/logo_weight_description"
+        app:layout_constraintBottom_toTopOf="@+id/txt_hello"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.608"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847"
+        app:srcCompat="@drawable/logo_weight" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

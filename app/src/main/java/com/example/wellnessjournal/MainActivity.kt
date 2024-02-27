@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications
+                R.id.navigation_welcome, R.id.navigation_home, R.id.navigation_notifications
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         // Don't show bottom navigation bar for Welcome screen, but do show it for all other screens
         if (currentNavPosition != null) {
-            if(currentNavPosition.label == "Home") {
+            if(currentNavPosition.label == "Welcome") {
                 navView.visibility = View.GONE
             }
             else {
