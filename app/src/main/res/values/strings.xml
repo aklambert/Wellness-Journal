@@ -8,4 +8,10 @@
         tracking and journaling all in one place.</string>
     <string name="btn_begin">Begin</string>
     <string name="logo_weight_description">Logo weight</string>
+    <string name="timer_icon">Timer icon</string>
+    <string name="hours">Hours:</string>
+    <string name="minutes">Minutes:</string>
+    <string name="enter_hours">enter hours</string>
+    <string name="enter_minutes">enter minutes</string>
+    <string name="start_timer">Start Timer</string>
 </resources>
