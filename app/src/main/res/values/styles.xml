@@ -40,11 +40,18 @@
         <item name="cornerRadius">12dp</item>
     </style>
     <style name="btn_primary" parent="style_header3">
-    <item name="backgroundTint">@color/primary_color</item>
-    <item name="android:textColor">@color/white</item>
-    <item name="android:layout_width">136dp</item>
-    <item name="android:layout_height">72dp</item>
+        <item name="backgroundTint">@color/primary_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">136dp</item>
+        <item name="android:layout_height">72dp</item>
         <item name="cornerRadius">12dp</item>
-</style>
+    </style>
+    <style name="btn_danger" parent="style_header3">
+        <item name="backgroundTint">@color/danger</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">136dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
 
 </resources>
