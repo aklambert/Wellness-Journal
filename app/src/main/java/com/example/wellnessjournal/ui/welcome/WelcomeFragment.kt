@@ -51,7 +51,7 @@ class WelcomeFragment : Fragment() {
 
         /* Listen for when the user clicks the BEGIN button on the welcome screen, and take note so that the welcome screen
          does not show again */
-        val btnBegin = root.findViewById<Button>(R.id.btn_begin) as Button
+        val btnBegin = root.findViewById<Button>(R.id.btn_start_timer) as Button
         btnBegin.setOnClickListener {
 
             // Set shared preference setting to prevent welcome screen from appearing again

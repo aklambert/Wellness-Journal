@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.timer.TimerFragment">
+
+        <EditText
+            android:id="@+id/input_seconds"
+            style="@style/style_header3"
+            android:layout_width="108dp"
+            android:layout_height="62dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/primary_color"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/enter_seconds"
+            android:inputType="number"
+            android:textColorHint="@color/material_dynamic_neutral40"
+            android:textCursorDrawable="@null"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.947"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.469" />
+
+        <TextView
+            android:id="@+id/colon2"
+            style="@style/style_header1"
+            android:layout_width="11dp"
+            android:layout_height="63dp"
+            android:text="@string/colon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/input_seconds"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toEndOf="@+id/input_minutes"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.471" />
+
+        <EditText
+            android:id="@+id/input_minutes"
+            style="@style/style_header3"
+            android:layout_width="105dp"
+            android:layout_height="62dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/primary_color"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/enter_minutes"
+            android:inputType="number"
+            android:textColorHint="@color/material_dynamic_neutral40"
+            android:textCursorDrawable="@null"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466" />
+
+        <TextView
+            android:id="@+id/colon1"
+            style="@style/style_header1"
+            android:layout_width="11dp"
+            android:layout_height="63dp"
+            android:text="@string/colon"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/input_minutes"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toEndOf="@+id/input_hours"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.471" />
+
+        <EditText
+            android:id="@+id/input_hours"
+            style="@style/style_header3"
+            android:layout_width="105dp"
+            android:layout_height="62dp"
+            android:autofillHints=""
+            android:backgroundTint="@color/primary_color"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/enter_hours"
+            android:inputType="number"
+            android:textColorHint="@color/material_dynamic_neutral40"
+            android:textCursorDrawable="@null"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.052"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.47" />
+
+        <Button
+            android:id="@+id/btn_timer"
+            style="@style/btn_primary"
+            android:layout_width="205dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="64dp"
+            android:text="@string/start_timer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_minutes"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/timer_progress_view"
+            style="@style/style_header2"
+            android:layout_width="337dp"
+            android:layout_height="103dp"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btn_timer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.525" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

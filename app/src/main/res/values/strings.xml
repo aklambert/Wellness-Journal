@@ -2,10 +2,19 @@
     <string name="app_name">WellnessJournal</string>
     <string name="title_welcome">Welcome</string>
     <string name="title_home">Home</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_timer">Timer</string>
     <string name="Hello">Hello!</string>
     <string name="welcome_message">Welcome to Fitness Journal, where you can customize fitness
         tracking and journaling all in one place.</string>
     <string name="btn_begin">Begin</string>
     <string name="logo_weight_description">Logo weight</string>
+    <string name="timer_icon">Timer icon</string>
+    <string name="hours">Hours:</string>
+    <string name="minutes">Minutes:</string>
+    <string name="enter_hours">00</string>
+    <string name="enter_minutes">00</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="stop_timer">STOP TIMER</string>
+    <string name="colon">:</string>
+    <string name="enter_seconds">00</string>
 </resources>
