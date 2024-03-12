@@ -22,4 +22,11 @@
         android:name="com.example.wellnessjournal.ui.timer.TimerFragment"
         android:label="@string/title_timer"
         tools:layout="@layout/fragment_timer" />
+
+    <fragment
+        android:id="@+id/navigation_fitness"
+        android:name="com.example.wellnessjournal.ui.fitness.FitnessFragment"
+        android:label="@string/title_fitness"
+        tools:layout="@layout/fragment_fitness" />
+
 </navigation>
