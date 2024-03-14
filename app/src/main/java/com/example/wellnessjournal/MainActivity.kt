@@ -1,13 +1,15 @@
 package com.example.wellnessjournal
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.wellnessjournal.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarItemView
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +29,10 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_welcome, R.id.navigation_home, R.id.navigation_timer, R.id.navigation_fitness
+                R.id.navigation_welcome,
+                R.id.navigation_home,
+                R.id.navigation_timer,
+                R.id.navigation_fitness
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -36,10 +41,9 @@ class MainActivity : AppCompatActivity() {
 
         // Don't show bottom navigation bar for Welcome screen, but do show it for all other screens
         if (currentNavPosition != null) {
-            if(currentNavPosition.label == "Welcome") {
+            if (currentNavPosition.label == "Welcome") {
                 navView.visibility = View.GONE
-            }
-            else {
+            } else {
 
                 navView.visibility = View.VISIBLE
             }

@@ -29,17 +29,8 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val welcomeViewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
-
         _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        // commenting this for now because I may learn from it/ use it later
-        /*
-        val textView: TextView = binding.textWelcome
-        welcomeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }*/
 
         // Check if user has clicked the BEGIN button before, and move right to Home Screen if they have
         val prefs = this.requireActivity().getSharedPreferences("pref", Context.MODE_PRIVATE)
