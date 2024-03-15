@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentFitnessBinding
-import com.example.wellnessjournal.ui.exercises.ExercisesFragment
+import com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragment
 
 class FitnessFragment : Fragment() {
 

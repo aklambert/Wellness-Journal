@@ -1,4 +1,4 @@
-package com.example.wellnessjournal.ui.exercises
+package com.example.wellnessjournal.ui.fitness.exercises
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
@@ -26,7 +27,7 @@ class ExercisesFragment : Fragment() {
         _binding = FragmentExercisesBinding.inflate(inflater,container, false)
         val root: View = binding.root
 
-
+        val ExercisesViewModel = ViewModelProvider(this)[ExercisesViewModel::class.java]
 
         return root
     }

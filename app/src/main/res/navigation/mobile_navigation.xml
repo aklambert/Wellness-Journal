@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/navigation_exercises"
-        android:name="com.example.wellnessjournal.ui.exercises.ExercisesFragment"
+        android:name="com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragment"
         android:label="@string/title_exercises"
         tools:layout="@layout/fragment_exercises"
         />
