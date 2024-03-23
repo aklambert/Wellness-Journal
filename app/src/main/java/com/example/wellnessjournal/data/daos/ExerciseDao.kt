@@ -1,5 +1,6 @@
 package com.example.wellnessjournal.data.daos
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
@@ -25,10 +26,14 @@ interface ExerciseDao {
 
     /**
      * Get a list of all saved exercises in order of their ID (when the exercise was created)
+     * in the format of LiveData
      */
     @Query("SELECT * FROM exercise ORDER BY exerciseId")
-    fun getExercises(): Flow<List<Exercise>>
+    fun getExercises(): LiveData<List<Exercise>>
 
+    /**
+     * Get an exercise with its associated exercise type
+     */
     @Transaction
     @Query("SELECT * FROM exercise")
     fun getExerciseWithExerciseType(): Flow<List<ExerciseWithExerciseType>>

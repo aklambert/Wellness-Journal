@@ -7,6 +7,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarItemView
@@ -48,5 +51,9 @@ class MainActivity : AppCompatActivity() {
                 navView.visibility = View.VISIBLE
             }
         }
+
+        // Initialize database, preparing to store user data
+      //  val db = WellnessJournalDatabase.getDatabase(this)
+
     }
 }

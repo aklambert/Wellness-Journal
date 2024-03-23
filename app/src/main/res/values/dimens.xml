@@ -6,4 +6,12 @@
     <dimen name="button_height">72dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="card_corner_radius">10dp</dimen>
+
+    <!-- bottom margins -->
+    <dimen name="bottom_margin">56dp</dimen>
+    <dimen name="floating_btn_bottom_margin">72dp</dimen>
+
+    <!-- Minimum height and width for items users can touch/click -->
+    <dimen name="min_height">48dp</dimen>
+    <dimen name="min_width">48dp</dimen>
 </resources>

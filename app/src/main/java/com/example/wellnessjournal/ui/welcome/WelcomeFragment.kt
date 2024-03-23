@@ -10,7 +10,9 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.room.Room
 import com.example.wellnessjournal.R
+import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.databinding.FragmentWelcomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -49,6 +51,8 @@ class WelcomeFragment : Fragment() {
             val prefsEditor: SharedPreferences.Editor = prefs.edit()
             prefsEditor.putBoolean("welcome_screen_disable", true)
             prefsEditor.apply()
+
+
 
             // Move to home screen
             findNavController().navigate(R.id.navigation_home)
