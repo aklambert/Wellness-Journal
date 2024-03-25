@@ -49,6 +49,7 @@
     <string name="exercise_time">Exercise Time/Duration</string>
     <string name="save_changes">Save Changes</string>
     <string name="delete">Delete Exercise</string>
+    <string name="title_workouts">Workouts</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

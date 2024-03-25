@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_navigation_fitness_to_navigation_exercises"
             app:destination="@id/navigation_exercises" />
+        <action
+            android:id="@+id/action_navigation_fitness_to_navigation_workouts"
+            app:destination="@id/navigation_workouts" />
     </fragment>
 
     <fragment
@@ -89,6 +92,17 @@
         <argument
             android:name="selected_exercise"
             app:argType="com.example.wellnessjournal.data.entities.Exercise" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_workouts"
+        android:name="com.example.wellnessjournal.ui.fitness.workouts.WorkoutsFragment"
+        android:label="Workouts"
+        tools:layout="@layout/fragment_workouts">
+
+        <action
+            android:id="@+id/action_navigation_workouts_to_navigation_fitness"
+            app:destination="@id/navigation_fitness" />
     </fragment>
 
 </navigation>
