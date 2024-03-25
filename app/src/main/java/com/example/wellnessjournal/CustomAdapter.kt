@@ -1,5 +1,6 @@
 package com.example.wellnessjournal
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,9 +49,11 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
     }
 
-    // Set data to use and display
+    // Set data to use and display, and notify data was changed
+    @SuppressLint("NotifyDataSetChanged")
     fun data(exercise: List<Exercise>) {
         this.exercises = exercise
+        notifyDataSetChanged()
     }
 
     // Get database size
