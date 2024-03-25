@@ -13,7 +13,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentTimerBinding
 
@@ -31,15 +30,10 @@ class TimerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val timerViewModel = ViewModelProvider(this).get(TimerViewModel::class.java)
 
         _binding = FragmentTimerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-       /* val textView: TextView = binding.textTimer
-        timerViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }*/
         val btnTimer: Button = root.findViewById(R.id.btn_timer)
 
         // Initialize timer

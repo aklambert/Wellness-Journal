@@ -1,0 +1,96 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 3,
+    "identityHash": "84dfc4aeb2b5ca21feafd5098d05c592",
+    "entities": [
+      {
+        "tableName": "exercise",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`exerciseId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `exerciseName` TEXT, `exerciseTypeId` INTEGER NOT NULL, `exerciseIntensity` TEXT, `exerciseTime` TEXT, `exerciseVolume` TEXT, `exerciseNote` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "exerciseId",
+            "columnName": "exerciseId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseName",
+            "columnName": "exerciseName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exerciseTypeId",
+            "columnName": "exerciseTypeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseIntensity",
+            "columnName": "exerciseIntensity",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exerciseTime",
+            "columnName": "exerciseTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exerciseVolume",
+            "columnName": "exerciseVolume",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exerciseNote",
+            "columnName": "exerciseNote",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "exerciseId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "exercise_type",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`exerciseTypeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `exerciseTypeName` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "exerciseTypeId",
+            "columnName": "exerciseTypeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseTypeName",
+            "columnName": "exerciseTypeName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "exerciseTypeId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '84dfc4aeb2b5ca21feafd5098d05c592')"
+    ]
+  }
+}

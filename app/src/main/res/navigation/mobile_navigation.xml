@@ -9,24 +9,86 @@
         android:id="@+id/navigation_welcome"
         android:name="com.example.wellnessjournal.ui.welcome.WelcomeFragment"
         android:label="@string/title_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_navigation_welcome_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.wellnessjournal.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_timer"
+            app:destination="@id/navigation_timer" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_fitness"
+            app:destination="@id/navigation_fitness" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_timer"
         android:name="com.example.wellnessjournal.ui.timer.TimerFragment"
         android:label="@string/title_timer"
-        tools:layout="@layout/fragment_timer" />
+        tools:layout="@layout/fragment_timer" >
+        <action
+            android:id="@+id/action_navigation_timer_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_fitness"
         android:name="com.example.wellnessjournal.ui.fitness.FitnessFragment"
         android:label="@string/title_fitness"
-        tools:layout="@layout/fragment_fitness" />
+        tools:layout="@layout/fragment_fitness" >
+        <action
+            android:id="@+id/action_navigation_fitness_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_fitness_to_navigation_exercises"
+            app:destination="@id/navigation_exercises" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_exercises"
+        android:name="com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragment"
+        android:label="@string/title_exercises"
+        tools:layout="@layout/fragment_exercises"
+        >
+        <action
+            android:id="@+id/action_navigation_exercises_to_navigation_fitness"
+            app:destination="@id/navigation_fitness" />
+        <action
+            android:id="@+id/action_navigation_exercises_to_navigation_add_exercise"
+            app:destination="@id/navigation_add_exercise" />
+        <action
+            android:id="@+id/action_navigation_exercises_to_navigation_update_exercise"
+            app:destination="@id/navigation_update_exercise" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_exercise"
+        android:name="com.example.wellnessjournal.ui.fitness.exercises.AddExerciseFragment"
+        android:label="Add Exercise"
+        tools:layout="@layout/fragment_add_exercise">
+        <action
+            android:id="@+id/action_navigation_add_exercise_to_navigation_exercises"
+            app:destination="@id/navigation_exercises" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_update_exercise"
+        android:name="com.example.wellnessjournal.ui.fitness.exercises.UpdateExerciseFragment"
+        android:label="Update Exercise"
+        tools:layout="@layout/fragment_update_exercise">
+        <action
+            android:id="@+id/action_navigation_update_exercise_to_navigation_exercises"
+            app:destination="@id/navigation_exercises" />
+        <argument
+            android:name="selected_exercise"
+            app:argType="com.example.wellnessjournal.data.entities.Exercise" />
+    </fragment>
 
 </navigation>

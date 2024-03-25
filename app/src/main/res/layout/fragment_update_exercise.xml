@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fitness.exercises.UpdateExerciseFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_exercise_name"
+            style="@style/style_header3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"
+            />
+
+        <Button
+            android:id="@+id/btn_delete_exercise"
+            style="@style/btn_danger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_note"
+            android:layout_marginTop="@dimen/delete_top_margin"
+            app:layout_constraintVertical_bias="0"/>
+
+        <EditText
+            android:id="@+id/input_exercise_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Name"
+            android:backgroundTint="@color/primary_color"
+            android:gravity="center"
+            android:hint="@string/exercise_name"
+            android:inputType="text"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exercise_name"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tv_exercise_type"
+            style="@style/style_header3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/type"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_name"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"/>
+
+        <Spinner
+            android:id="@+id/input_exercise_type"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Type"
+            android:gravity="center"
+            android:backgroundTint="@color/primary_color"
+            android:hint="@string/exercise_type"
+            android:entries="@array/exercise_types_stringarray"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exercise_type"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tv_exercise_intensity"
+            style="@style/style_header3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/intensity"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_type"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"
+            />
+
+        <EditText
+            android:id="@+id/input_exercise_intensity"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Intensity"
+            android:gravity="center"
+            android:inputType="text"
+            android:backgroundTint="@color/primary_color"
+            android:hint="@string/exercise_intensity"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exercise_intensity"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tv_exercise_time"
+            style="@style/style_header3"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/exercise_time"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_intensity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"
+            />
+
+        <EditText
+            android:id="@+id/input_exercise_time"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Time/ Duration"
+            android:gravity="center"
+            android:inputType="text"
+            android:backgroundTint="@color/primary_color"
+            android:hint="@string/exercise_time"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exercise_time"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tv_exercise_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/volume"
+            style="@style/style_header3"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"
+            />
+
+        <EditText
+            android:id="@+id/input_exercise_volume"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Volume"
+            android:gravity="center"
+            android:inputType="text"
+            android:backgroundTint="@color/primary_color"
+            android:hint="@string/exercise_volume"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exercise_volume"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/tv_exercise_note"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/notes"
+            style="@style/style_header3"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_volume"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"
+            />
+
+        <EditText
+            android:id="@+id/input_exercise_note"
+            android:layout_width="350dp"
+            android:layout_height="99dp"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Notes"
+            android:backgroundTint="@color/primary_color"
+            android:gravity="center"
+            android:hint="@string/exercise_notes"
+            android:inputType="text"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exercise_note"
+            app:layout_constraintVertical_bias="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_update_exercise"
+            style="@style/btn_primary"
+            android:layout_marginTop="@dimen/margin_between_save_and_delete_btns"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:paddingHorizontal="20dp"
+            android:text="@string/save_changes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_delete_exercise"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
