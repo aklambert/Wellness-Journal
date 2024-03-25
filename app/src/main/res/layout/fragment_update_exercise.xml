@@ -24,6 +24,19 @@
             android:layout_margin="@dimen/text_margin"
             />
 
+        <Button
+            android:id="@+id/btn_delete_exercise"
+            style="@style/btn_danger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_note"
+            android:layout_marginTop="@dimen/delete_top_margin"
+            app:layout_constraintVertical_bias="0"/>
+
         <EditText
             android:id="@+id/input_exercise_name"
             android:layout_width="match_parent"
@@ -197,17 +210,17 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/min_height"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_update_exercise"
             style="@style/btn_primary"
-            android:layout_marginTop="@dimen/text_margin"
+            android:layout_marginTop="@dimen/margin_between_save_and_delete_btns"
             android:layout_marginBottom="@dimen/bottom_margin"
             android:paddingHorizontal="20dp"
             android:text="@string/save_changes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_exercise_note"
+            app:layout_constraintTop_toBottomOf="@+id/btn_delete_exercise"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

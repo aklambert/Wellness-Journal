@@ -19,7 +19,7 @@ import com.example.wellnessjournal.databinding.FragmentUpdateExerciseBinding
 
 class UpdateExerciseFragment : Fragment() {
     private var _binding: FragmentUpdateExerciseBinding? = null
-    private val args by navArgs<UpdateExerciseFragmentArgs>()
+    private val savedExercise by navArgs<UpdateExerciseFragmentArgs>()
 
     private val binding get() = _binding!!
     override fun onCreateView(
@@ -39,9 +39,16 @@ class UpdateExerciseFragment : Fragment() {
         // Listen for when someone updates an exercise
         val btnUpdate: Button = root.findViewById(R.id.btn_update_exercise)
         btnUpdate.setOnClickListener {
-
             // Save updated information
             updateExercise(root, updateExerciseVM)
+            findNavController().navigate(R.id.navigation_exercises)
+        }
+
+        // Listen for when someone deletes an exercise
+        val btnDelete: Button = root.findViewById(R.id.btn_delete_exercise)
+        btnDelete.setOnClickListener {
+            // Delete exercise
+            deleteExercise(updateExerciseVM)
             findNavController().navigate(R.id.navigation_exercises)
         }
 
@@ -52,12 +59,12 @@ class UpdateExerciseFragment : Fragment() {
      * Show currently saved exercise data in the input fields
      */
     private fun currentInfo(root: View) {
-        root.findViewById<EditText>(R.id.input_exercise_name).setText(args.selectedExercise.exerciseName)
-        root.findViewById<Spinner>(R.id.input_exercise_type).setSelection(args.selectedExercise.exerciseTypeId)
-        root.findViewById<EditText>(R.id.input_exercise_intensity).setText(args.selectedExercise.exerciseIntensity)
-        root.findViewById<EditText>(R.id.input_exercise_time).setText(args.selectedExercise.exerciseTime)
-        root.findViewById<EditText>(R.id.input_exercise_volume).setText(args.selectedExercise.exerciseVolume)
-        root.findViewById<EditText>(R.id.input_exercise_note).setText(args.selectedExercise.exerciseNote)
+        root.findViewById<EditText>(R.id.input_exercise_name).setText(savedExercise.selectedExercise.exerciseName)
+        root.findViewById<Spinner>(R.id.input_exercise_type).setSelection(savedExercise.selectedExercise.exerciseTypeId)
+        root.findViewById<EditText>(R.id.input_exercise_intensity).setText(savedExercise.selectedExercise.exerciseIntensity)
+        root.findViewById<EditText>(R.id.input_exercise_time).setText(savedExercise.selectedExercise.exerciseTime)
+        root.findViewById<EditText>(R.id.input_exercise_volume).setText(savedExercise.selectedExercise.exerciseVolume)
+        root.findViewById<EditText>(R.id.input_exercise_note).setText(savedExercise.selectedExercise.exerciseNote)
     }
 
     /**
@@ -108,7 +115,24 @@ class UpdateExerciseFragment : Fragment() {
         val volume = info[4].toString()
         val note = info[5].toString()
 
-        val exercise = Exercise(args.selectedExercise.exerciseId, name, typeId, intensity, time, volume, note)
+        val exercise = Exercise(savedExercise.selectedExercise.exerciseId, name, typeId, intensity, time, volume, note)
         viewModel.updateExercise(exercise)
+    }
+
+    /**
+     * Delete exercise
+     */
+    private fun deleteExercise(viewModel: UpdateExerciseViewModel) {
+        // Get exercise to delete
+        val id = savedExercise.selectedExercise.exerciseId
+        val name = savedExercise.selectedExercise.exerciseName
+        val type = savedExercise.selectedExercise.exerciseTypeId
+        val intensity = savedExercise.selectedExercise.exerciseIntensity
+        val time = savedExercise.selectedExercise.exerciseTime
+        val volume = savedExercise.selectedExercise.exerciseVolume
+        val note = savedExercise.selectedExercise.exerciseNote
+
+        val exercise = Exercise(id, name, type, intensity, time, volume, note)
+        viewModel.deleteExercise(exercise)
     }
 }

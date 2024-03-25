@@ -11,6 +11,10 @@
     <dimen name="bottom_margin">56dp</dimen>
     <dimen name="floating_btn_bottom_margin">72dp</dimen>
 
+    <!-- Top margins -->
+    <dimen name="margin_between_save_and_delete_btns">56dp</dimen>
+    <dimen name="delete_top_margin">32dp</dimen>
+
     <!-- Minimum height and width for items users can touch/click -->
     <dimen name="min_height">48dp</dimen>
     <dimen name="min_width">48dp</dimen>

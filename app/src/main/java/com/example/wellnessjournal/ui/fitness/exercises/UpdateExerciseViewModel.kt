@@ -21,4 +21,10 @@ class UpdateExerciseViewModel(application: Application) : AndroidViewModel(appli
             exerciseDao.updateExercise(exercise)
         }
     }
+
+    fun deleteExercise(exercise: Exercise) {
+        viewModelScope.launch(Dispatchers.IO) {
+            exerciseDao.deleteExercise(exercise)
+        }
+    }
 }

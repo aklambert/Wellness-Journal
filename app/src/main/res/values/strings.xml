@@ -31,9 +31,7 @@
     <string name="colon">:</string>
     <string name="enter_seconds">00</string>
 
-    <!-- Fitness Screen -->
-    <string name="exercises">Here will be a list of exercises....</string>
-
+    <!-- Exercises -->
     <string name="item_text">List item</string>
     <string name="add_button">Add button</string>
     <string name="add_exercise">Add Exercise</string>
@@ -50,6 +48,7 @@
     <string name="exercise_notes">Exercise Notes</string>
     <string name="exercise_time">Exercise Time/Duration</string>
     <string name="save_changes">Save Changes</string>
+    <string name="delete">Delete Exercise</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">
