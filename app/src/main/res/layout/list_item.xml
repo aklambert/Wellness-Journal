@@ -14,7 +14,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:cardCornerRadius="@dimen/card_corner_radius"
-            app:cardElevation="4dp"
+            app:cardElevation="@dimen/card_elevation"
             android:layout_margin="8dp"
             >
             <androidx.constraintlayout.widget.ConstraintLayout

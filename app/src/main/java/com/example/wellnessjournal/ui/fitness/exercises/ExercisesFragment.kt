@@ -30,12 +30,13 @@ class ExercisesFragment : Fragment() {
         _binding = FragmentExercisesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        // Get associated ViewModel
         val exercisesViewModel = ViewModelProvider(this)[ExercisesViewModel::class.java]
 
         // Setup adapter with RecyclerView to show data from database
         val customAdapter = CustomAdapter()
 
-        val exerciseRecyclerView: RecyclerView = root.findViewById(R.id.recyclerView)
+        val exerciseRecyclerView: RecyclerView = root.findViewById(R.id.exercise_recyclerView)
         val manager = LinearLayoutManager(context)
         exerciseRecyclerView.layoutManager = manager
         exerciseRecyclerView.adapter = customAdapter
@@ -51,5 +52,10 @@ class ExercisesFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
