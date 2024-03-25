@@ -2,7 +2,6 @@ package com.example.wellnessjournal.ui.fitness.exercises
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.ExerciseRepository
 import com.example.wellnessjournal.data.WellnessJournalDatabase
@@ -16,15 +15,18 @@ class UpdateExerciseViewModel(application: Application) : AndroidViewModel(appli
     private val exerciseDao: ExerciseDao =
         WellnessJournalDatabase.getDatabase(application)?.ExerciseDao()!!
 
+    // Get repository for accessing dao methods
+    private val exerciseRepo: ExerciseRepository = ExerciseRepository(exerciseDao)
+
     fun updateExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
-            exerciseDao.updateExercise(exercise)
+            exerciseRepo.updateExercise(exercise)
         }
     }
 
     fun deleteExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
-            exerciseDao.deleteExercise(exercise)
+            exerciseRepo.deleteExercise(exercise)
         }
     }
 }

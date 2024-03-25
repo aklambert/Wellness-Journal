@@ -7,7 +7,6 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
-import androidx.room.Upsert
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entityrelations.ExerciseWithExerciseType
 import kotlinx.coroutines.flow.Flow

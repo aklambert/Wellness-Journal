@@ -1,6 +1,4 @@
 package com.example.wellnessjournal.ui.fitness.exercises
-
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import androidx.fragment.app.findFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -88,8 +85,7 @@ class UpdateExerciseFragment : Fragment() {
         val note = noteEditText.text.toString()
 
         // Match exercise type string with its id number in database
-        var id = 0
-        id = when (type) {
+         val id = when (type) {
             "Aerobic Exercise" -> 0
             "Resistance Training" -> 1
             "Stretching" -> 2

@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
@@ -63,8 +62,7 @@ class AddExerciseFragment : Fragment() {
         val note = noteEditText.text.toString()
 
         // Match exercise type string with its id number in database
-        var id = 0
-        id = when (type) {
+        val id = when (type) {
             "Aerobic Exercise" -> 0
             "Resistance Training" -> 1
             "Stretching" -> 2

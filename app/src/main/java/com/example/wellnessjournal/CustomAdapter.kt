@@ -8,7 +8,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.lifecycle.LiveData
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Exercise
@@ -22,9 +21,7 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
      // Setup ViewHolders (view items used in each list item)
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-         val cardView: CardView = view.findViewById(R.id.list_item_cardview)
          val textView: TextView = view.findViewById(R.id.list_item_txt)
-         val imageView: ImageView = view.findViewById(R.id.list_item_img)
     }
 
     // Create new views for list items with the layout manager
