@@ -1,10 +1,13 @@
 package com.example.wellnessjournal.data.entities
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "exercise")
+@Parcelize
 data class Exercise(
     @PrimaryKey(autoGenerate = true) val exerciseId: Int,
     val exerciseName: String?,
@@ -13,4 +16,4 @@ data class Exercise(
     val exerciseTime: String?,
     val exerciseVolume: String?,
     val exerciseNote: String?
-)
+) : Parcelable

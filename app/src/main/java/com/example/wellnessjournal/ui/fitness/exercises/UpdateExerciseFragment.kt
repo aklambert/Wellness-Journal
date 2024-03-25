@@ -1,45 +1,63 @@
 package com.example.wellnessjournal.ui.fitness.exercises
 
+import androidx.fragment.app.viewModels
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
+import androidx.fragment.app.findFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.data.entities.Exercise
-import com.example.wellnessjournal.databinding.FragmentAddExerciseBinding
+import com.example.wellnessjournal.databinding.FragmentUpdateExerciseBinding
 
-class AddExerciseFragment : Fragment() {
-    private var _binding: FragmentAddExerciseBinding? = null
+class UpdateExerciseFragment : Fragment() {
+    private var _binding: FragmentUpdateExerciseBinding? = null
+    private val args by navArgs<UpdateExerciseFragmentArgs>()
 
-    // Valid between onCreateView and onDestroyView
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAddExerciseBinding.inflate(inflater, container, false)
+        _binding = FragmentUpdateExerciseBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         // ViewModel setup
-        val addExerciseVM: AddExerciseViewModel = ViewModelProvider(this)[AddExerciseViewModel::class.java]
+        val updateExerciseVM: UpdateExerciseViewModel =
+            ViewModelProvider(this)[UpdateExerciseViewModel::class.java]
 
-        // Listen for when someone saves an exercise
-        val btnSave: Button = root.findViewById(R.id.btn_save_exercise)
-        btnSave.setOnClickListener {
-            // Get information to save, and save it to the database
-            val info = getExerciseInput(root)
-            saveExercise(info, addExerciseVM)
+        // Show current exercise information for exercise being updated
+        currentInfo(root)
+
+        // Listen for when someone updates an exercise
+        val btnUpdate: Button = root.findViewById(R.id.btn_update_exercise)
+        btnUpdate.setOnClickListener {
+
+            // Save updated information
+            updateExercise(root, updateExerciseVM)
             findNavController().navigate(R.id.navigation_exercises)
         }
 
         return root
+    }
+
+    /**
+     * Show currently saved exercise data in the input fields
+     */
+    private fun currentInfo(root: View) {
+        root.findViewById<EditText>(R.id.input_exercise_name).setText(args.selectedExercise.exerciseName)
+        root.findViewById<Spinner>(R.id.input_exercise_type).setSelection(args.selectedExercise.exerciseTypeId)
+        root.findViewById<EditText>(R.id.input_exercise_intensity).setText(args.selectedExercise.exerciseIntensity)
+        root.findViewById<EditText>(R.id.input_exercise_time).setText(args.selectedExercise.exerciseTime)
+        root.findViewById<EditText>(R.id.input_exercise_volume).setText(args.selectedExercise.exerciseVolume)
+        root.findViewById<EditText>(R.id.input_exercise_note).setText(args.selectedExercise.exerciseNote)
     }
 
     /**
@@ -77,10 +95,12 @@ class AddExerciseFragment : Fragment() {
     }
 
     /**
-     * Save exercise to the database
+     * Update exercise in the database
      */
-    private fun saveExercise(info: Array<Any>, viewModel: AddExerciseViewModel) {
-        // Info from array
+    private fun updateExercise(root: View, viewModel: UpdateExerciseViewModel) {
+        // Get information to save
+        val info = getExerciseInput(root)
+
         val name = info[0].toString()
         val typeId = info[1].toString().toInt()
         val intensity = info[2].toString()
@@ -88,12 +108,7 @@ class AddExerciseFragment : Fragment() {
         val volume = info[4].toString()
         val note = info[5].toString()
 
-        val exercise = Exercise(0, name, typeId, intensity, time, volume, note)
-        viewModel.createExercise(exercise)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        val exercise = Exercise(args.selectedExercise.exerciseId, name, typeId, intensity, time, volume, note)
+        viewModel.updateExercise(exercise)
     }
 }

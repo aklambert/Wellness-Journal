@@ -60,12 +60,35 @@
         <action
             android:id="@+id/action_navigation_exercises_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
+        <action
+            android:id="@+id/action_navigation_exercises_to_navigation_add_exercise"
+            app:destination="@id/navigation_add_exercise" />
+        <action
+            android:id="@+id/action_navigation_exercises_to_navigation_update_exercise"
+            app:destination="@id/navigation_update_exercise" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_add_exercise"
         android:name="com.example.wellnessjournal.ui.fitness.exercises.AddExerciseFragment"
-        android:label="Add Exercise">
+        android:label="Add Exercise"
+        tools:layout="@layout/fragment_add_exercise">
+        <action
+            android:id="@+id/action_navigation_add_exercise_to_navigation_exercises"
+            app:destination="@id/navigation_exercises" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_update_exercise"
+        android:name="com.example.wellnessjournal.ui.fitness.exercises.UpdateExerciseFragment"
+        android:label="Update Exercise"
+        tools:layout="@layout/fragment_update_exercise">
+        <action
+            android:id="@+id/action_navigation_update_exercise_to_navigation_exercises"
+            app:destination="@id/navigation_exercises" />
+        <argument
+            android:name="selected_exercise"
+            app:argType="com.example.wellnessjournal.data.entities.Exercise" />
     </fragment>
 
 </navigation>

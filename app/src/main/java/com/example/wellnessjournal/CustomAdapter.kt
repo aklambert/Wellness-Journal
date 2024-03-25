@@ -6,9 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.LiveData
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Exercise
+import com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragmentDirections
 
 /**
  * Define custom adapter for RecyclerView for listing data items
@@ -38,6 +41,11 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
         // contents of the view with that element
         val item = exercises[position]
         viewHolder.textView.text = item.exerciseName.toString()
+        viewHolder.itemView.findViewById<ConstraintLayout>(R.id.list_item_constraintlayout).setOnClickListener {
+            val action = ExercisesFragmentDirections.actionNavigationExercisesToNavigationUpdateExercise(item)
+            viewHolder.itemView.findNavController().navigate(action)
+        }
+
     }
 
     // Set data to use and display
