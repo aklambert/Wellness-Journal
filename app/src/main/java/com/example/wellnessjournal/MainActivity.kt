@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_welcome,
                 R.id.navigation_home,
                 R.id.navigation_timer,
                 R.id.navigation_fitness
@@ -51,9 +50,11 @@ class MainActivity : AppCompatActivity() {
                 navView.visibility = View.VISIBLE
             }
         }
+    }
 
-        // Initialize database, preparing to store user data
-      //  val db = WellnessJournalDatabase.getDatabase(this)
-
+    // Set up the back button to go to the previous fragment
+    override fun onSupportNavigateUp(): Boolean {
+        val navigationController = findNavController(R.id.nav_host_fragment_activity_main)
+        return navigationController.navigateUp()
     }
 }
