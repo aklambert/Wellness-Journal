@@ -50,6 +50,14 @@
     <string name="save_changes">Save Changes</string>
     <string name="delete">Delete Exercise</string>
     <string name="title_workouts">Workouts</string>
+    <string name="title_Weight_tracker">Weight</string>
+    <string name="goal_weight">Goal Weight:</string>
+    <string name="edit_goal_weight">Edit Goal Weight</string>
+    <string name="none">None</string>
+    <string name="enter_goal_weight">Enter goal weight:</string>
+    <string name="example_weight">### lbs</string>
+    <string name="add_goal_weight">Add goal weight</string>
+
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

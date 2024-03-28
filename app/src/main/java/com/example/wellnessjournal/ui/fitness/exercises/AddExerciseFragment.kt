@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.databinding.FragmentAddExerciseBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class AddExerciseFragment : Fragment() {
     private var _binding: FragmentAddExerciseBinding? = null

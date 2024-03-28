@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fitness.weightTracking.EditGoalWeightFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_goalweight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintVertical_bias="0"
+            android:text="@string/enter_goal_weight"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/style_header1"/>
+
+        <EditText
+            android:id="@+id/input_goalweight"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Goal weight"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:backgroundTint="@color/primary_color"
+            android:hint="@string/goal_weight"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_goalweight"
+            app:layout_constraintVertical_bias="0" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_save_goal_weight"
+            style="@style/btn_primary"
+            android:layout_marginTop="@dimen/margin_between_save_and_delete_btns"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:paddingHorizontal="20dp"
+            android:text="@string/save_changes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_goalweight"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

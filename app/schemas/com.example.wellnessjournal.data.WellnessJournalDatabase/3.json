@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "84dfc4aeb2b5ca21feafd5098d05c592",
+    "identityHash": "9fdd75f0eddfff5d69af58b27b5cfb4b",
     "entities": [
       {
         "tableName": "exercise",
@@ -85,12 +85,38 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "goalWeight",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`goalWeightId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `goalWeightValue` REAL)",
+        "fields": [
+          {
+            "fieldPath": "goalWeightId",
+            "columnName": "goalWeightId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "goalWeightValue",
+            "columnName": "goalWeightValue",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "goalWeightId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '84dfc4aeb2b5ca21feafd5098d05c592')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9fdd75f0eddfff5d69af58b27b5cfb4b')"
     ]
   }
 }

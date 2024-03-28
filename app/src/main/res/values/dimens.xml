@@ -21,4 +21,6 @@
 
     <!-- elevation -->
     <dimen name="card_elevation">4dp</dimen>
+
+    <dimen name="fitness_card_horizontalMargin">64dp</dimen>
 </resources>

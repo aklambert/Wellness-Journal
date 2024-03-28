@@ -5,12 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
-
                 <ImageView
                     android:id="@+id/img_exercise_equipment"
                     android:layout_width="412dp"
@@ -25,9 +23,10 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/exercises_card"
-                    android:layout_width="165dp"
+                    android:layout_width="match_parent"
                     android:layout_height="114dp"
-                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:layout_marginVertical="@dimen/activity_vertical_margin"
+                    android:layout_marginHorizontal="@dimen/fitness_card_horizontalMargin"
                     android:backgroundTint="@color/primary_color_variant2"
                     android:clickable="true"
                     android:focusable="true"
@@ -75,14 +74,16 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/workouts_card"
-                    android:layout_width="165dp"
+                    android:layout_width="match_parent"
                     android:layout_height="114dp"
-                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:layout_marginVertical="@dimen/activity_vertical_margin"
+                    android:layout_marginHorizontal="@dimen/fitness_card_horizontalMargin"
                     android:backgroundTint="@color/primary_color_variant2"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardElevation="@dimen/card_elevation"
+                    app:layout_constraintVertical_bias="0"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +119,57 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toBottomOf="@id/workout_card_icon" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/weight_tracker_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:layout_marginVertical="@dimen/activity_vertical_margin"
+                    android:layout_marginHorizontal="@dimen/fitness_card_horizontalMargin"
+                    android:backgroundTint="@color/primary_color_variant2"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="@dimen/card_corner_radius"
+                    app:cardElevation="@dimen/card_elevation"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/workouts_card">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/weight_card_icon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="@dimen/activity_vertical_margin"
+                                    android:contentDescription="@string/logo_weight_description"
+                                    android:src="@drawable/weight_tracker_icon"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.172" />
+
+                                <TextView
+                                    style="@style/style_header3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="@dimen/activity_vertical_margin"
+                                    android:gravity="center"
+                                    android:text="@string/title_Weight_tracker"
+                                    android:textColor="@color/primary_color"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/weight_card_icon" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>

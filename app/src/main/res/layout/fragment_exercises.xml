@@ -11,6 +11,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:listitem="@layout/list_item"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/bottom_margin"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -27,6 +31,8 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="@dimen/floating_btn_bottom_margin"
             android:contentDescription="@string/add_button" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

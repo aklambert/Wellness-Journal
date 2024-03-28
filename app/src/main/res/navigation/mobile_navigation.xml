@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_navigation_fitness_to_navigation_workouts"
             app:destination="@id/navigation_workouts" />
+        <action
+            android:id="@+id/action_navigation_fitness_to_navigation_weight_tracking"
+            app:destination="@id/navigation_weight_tracking" />
     </fragment>
 
     <fragment
@@ -103,6 +106,49 @@
         <action
             android:id="@+id/action_navigation_workouts_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_weight_tracking"
+        android:name="com.example.wellnessjournal.ui.fitness.weightTracking.WeightTrackingFragment"
+        android:label="Weight Tracking"
+        tools:layout="@layout/fragment_weight_tracking"
+        >
+        <action
+            android:id="@+id/action_navigation_weight_tracking_to_navigation_fitness"
+            app:destination="@id/navigation_fitness" />
+        <action
+            android:id="@+id/action_navigation_weight_tracking_to_navigation_edit_goalweight"
+            app:destination="@id/navigation_edit_goalweight" />
+        <action
+            android:id="@+id/action_navigation_weight_tracking_to_navigation_add_goalweight"
+            app:destination="@id/navigation_add_goalweight" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_goalweight"
+        android:name="com.example.wellnessjournal.ui.fitness.weightTracking.AddGoalWeightFragment"
+        android:label="Add Goal Weight"
+        tools:layout="@layout/fragment_add_goal_weight"
+        >
+        <action
+            android:id="@+id/action_navigation_add_goalweight_to_navigation_weight_tracking"
+            app:destination="@id/navigation_weight_tracking" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_edit_goalweight"
+        android:name="com.example.wellnessjournal.ui.fitness.weightTracking.EditGoalWeightFragment"
+        android:label="Edit Goal Weight"
+        tools:layout="@layout/fragment_edit_goal_weight"
+        >
+        <action
+            android:id="@+id/action_navigation_edit_goalweight_to_navigation_weight_tracking"
+            app:destination="@id/navigation_weight_tracking" />
+        <argument
+            android:name="saved_goal_weight"
+            app:argType="com.example.wellnessjournal.data.entities.GoalWeight"
+            />
     </fragment>
 
 </navigation>
