@@ -3,13 +3,13 @@ package com.example.wellnessjournal.data.entityrelations
 import androidx.room.Embedded
 import androidx.room.Relation
 import com.example.wellnessjournal.data.entities.Exercise
-import com.example.wellnessjournal.data.entities.ExerciseType
+import com.example.wellnessjournal.data.entities.WorkoutBuild
 
-data class ExerciseWithExerciseType(
+data class WorkoutBuildWithExercise(
     @Embedded val exercise: Exercise,
     @Relation(
         parentColumn = "exerciseId",
-        entityColumn = "exerciseTypeId"
+        entityColumn = "exerciseId"
     )
-    val exerciseTypes: List<ExerciseType>
+    val workoutBuild: List<WorkoutBuild>
 )

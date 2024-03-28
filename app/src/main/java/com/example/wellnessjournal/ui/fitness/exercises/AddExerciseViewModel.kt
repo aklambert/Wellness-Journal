@@ -12,13 +12,16 @@ import kotlinx.coroutines.launch
 
 class AddExerciseViewModel(application: Application) : AndroidViewModel(application) {
 
-    // Get ExerciseDao to access Exercise Table in database
+    // Get Exercise Dao to access Exercise Table in database
     private val exerciseDao: ExerciseDao =
         WellnessJournalDatabase.getDatabase(application)?.ExerciseDao()!!
 
     // Get repository for accessing dao methods
     private val exerciseRepo: ExerciseRepository = ExerciseRepository(exerciseDao)
 
+    /**
+     * Create a new exercise
+     */
     fun createExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
             exerciseRepo.createExercise(exercise)

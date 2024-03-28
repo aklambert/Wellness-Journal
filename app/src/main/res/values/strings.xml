@@ -50,6 +50,10 @@
     <string name="save_changes">Save Changes</string>
     <string name="delete">Delete Exercise</string>
     <string name="title_workouts">Workouts</string>
+    <string name="add_workout_instructions">Select the exercises you would like to add to your workout:</string>
+    <string name="name_workout_instructions">Name your new workout:</string>
+    <string name="workout_name">Workout name</string>
+    <string name="workout_notes">Workout notes</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

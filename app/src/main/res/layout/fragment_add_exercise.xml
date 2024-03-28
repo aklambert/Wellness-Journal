@@ -181,7 +181,7 @@
         <EditText
             android:id="@+id/input_exercise_note"
             android:layout_width="350dp"
-            android:layout_height="99dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:autofillHints="Exercise Notes"
             android:backgroundTint="@color/primary_color"

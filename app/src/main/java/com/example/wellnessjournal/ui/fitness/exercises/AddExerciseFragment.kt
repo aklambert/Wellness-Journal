@@ -70,7 +70,6 @@ class AddExerciseFragment : Fragment() {
             "Other" -> 4
             else -> {4}
         }
-
         return arrayOf(name, id, intensity, time, volume, note)
     }
 
