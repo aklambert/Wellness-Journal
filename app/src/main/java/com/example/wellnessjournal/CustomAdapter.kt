@@ -43,7 +43,6 @@ class CustomAdapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
             val action = ExercisesFragmentDirections.actionNavigationExercisesToNavigationUpdateExercise(item)
             viewHolder.itemView.findNavController().navigate(action)
         }
-
     }
 
     // Set data to use and display, and notify data was changed

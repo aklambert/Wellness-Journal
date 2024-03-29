@@ -45,7 +45,7 @@ class ExercisesFragment : Fragment() {
             customAdapter.data(exercise)
         })
 
-        // Listen for when user is moving to the Exercises screen
+        // Listen for when user is moving to the Add Exercises screen
         val btnAddExercise: FloatingActionButton = root.findViewById(R.id.btn_add_exercise)
         btnAddExercise.setOnClickListener {
             findNavController().navigate(R.id.navigation_add_exercise)
