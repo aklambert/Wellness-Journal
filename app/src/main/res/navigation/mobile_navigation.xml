@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_journal"
+            app:destination="@id/navigation_journal" />
     </fragment>
 
     <fragment
@@ -103,6 +106,28 @@
         <action
             android:id="@+id/action_navigation_workouts_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
+    </fragment>
+
+    <fragment
+        android:id="@id/navigation_journal"
+        android:name="com.example.wellnessjournal.ui.journal.JournalFragment"
+        android:label="Reflection Journal"
+        tools:layout="@layout/fragment_journal">
+        <action
+            android:id="@+id/action_navigation_journal_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_journal_to_navigation_add_reflection_journal"
+            app:destination="@id/navigation_add_reflection_journal" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_add_reflection_journal"
+        android:name="com.example.wellnessjournal.ui.journal.AddReflectionJournalFragment"
+        android:label="Add Reflection Journal"
+        tools:layout="@layout/fragment_add_reflection_journal">
+        <action
+            android:id="@+id/action_navigation_add_reflection_journal_to_navigation_journal"
+            app:destination="@id/navigation_journal" />
     </fragment>
 
 </navigation>
