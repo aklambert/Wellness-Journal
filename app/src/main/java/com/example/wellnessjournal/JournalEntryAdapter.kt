@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.ReflectionJournal
 import com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragmentDirections
+import com.example.wellnessjournal.ui.journal.JournalFragmentDirections
 
 class JournalEntryAdapter: RecyclerView.Adapter<JournalEntryAdapter.ViewHolder>() {
     private var reflectionJournals = listOf<ReflectionJournal>()
@@ -38,6 +39,11 @@ class JournalEntryAdapter: RecyclerView.Adapter<JournalEntryAdapter.ViewHolder>(
         val item = reflectionJournals[position]
         viewHolder.entryTV.text = item.reflectionJournalEntry.toString()
         viewHolder.dateEntry.text = item.reflectionJournalDate.toString()
+
+        viewHolder.itemView.findViewById<ConstraintLayout>(R.id.journal_item_constraintlayout).setOnClickListener {
+            val action = JournalFragmentDirections.actionNavigationJournalToNavigationUpdateReflectionJournal(item)
+            viewHolder.itemView.findNavController().navigate(action)
+        }
     }
 
     // Set data to use and display, and notify data was changed
