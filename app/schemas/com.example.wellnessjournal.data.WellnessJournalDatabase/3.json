@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "84dfc4aeb2b5ca21feafd5098d05c592",
+    "identityHash": "24840a6f9e4e8de6f61f77941c0176c0",
     "entities": [
       {
         "tableName": "exercise",
@@ -85,12 +85,44 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "reflectionJournal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`reflectionJournalId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `reflectionJournalEntry` TEXT, `reflectionJournalDate` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "reflectionJournalId",
+            "columnName": "reflectionJournalId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reflectionJournalEntry",
+            "columnName": "reflectionJournalEntry",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "reflectionJournalDate",
+            "columnName": "reflectionJournalDate",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "reflectionJournalId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '84dfc4aeb2b5ca21feafd5098d05c592')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '24840a6f9e4e8de6f61f77941c0176c0')"
     ]
   }
 }
