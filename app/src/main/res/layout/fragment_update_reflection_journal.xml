@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.journal.UpdateReflectionJournalFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_reflection_journal_entry"
+            android:layout_width="350dp"
+            android:layout_height="99dp"
+            android:layout_margin="@dimen/text_margin"
+            android:autofillHints="Exercise Notes"
+            android:backgroundTint="@color/primary_color"
+            android:gravity="center"
+            android:hint="@string/journal_entry"
+            android:inputType="text"
+            android:textColorHint="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+
+        <Button
+            android:id="@+id/btn_delete_reflection_journal_entry"
+            style="@style/btn_danger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_reflection_journal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_reflection_journal_entry"
+            android:layout_marginTop="@dimen/delete_top_margin"
+            app:layout_constraintVertical_bias="0"/>
+
+        <Button
+            android:id="@+id/btn_save_reflection_journal"
+            style="@style/btn_primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_save_and_delete_btns"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:paddingHorizontal="20dp"
+            android:text="@string/save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_delete_reflection_journal_entry" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
