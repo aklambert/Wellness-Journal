@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ExerciseDao {
     /**
-     * Insert a exercise item
+     * Insert an exercise item
      */
     @Insert
     suspend fun insertExercise(exercise: Exercise)
@@ -39,7 +39,7 @@ interface ExerciseDao {
     fun getExercises(): LiveData<List<Exercise>>
 
     /**
-     * Get an exercise with its associated exercise type
+     * Get exercises with their associated exercise types
      */
     @Transaction
     @Query("SELECT * FROM exercise")

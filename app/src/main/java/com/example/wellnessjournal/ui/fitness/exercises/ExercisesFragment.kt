@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wellnessjournal.CustomAdapter
+import com.example.wellnessjournal.ExerciseListAdapter
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentExercisesBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -33,25 +33,25 @@ class ExercisesFragment : Fragment() {
         // Get associated ViewModel
         val exercisesViewModel = ViewModelProvider(this)[ExercisesViewModel::class.java]
 
-        // Setup adapter with RecyclerView to show data from database
-        val customAdapter = CustomAdapter()
-
+        // Setup adapter with RecyclerView to show exercises from database
+        val customAdapter = ExerciseListAdapter()
         val exerciseRecyclerView: RecyclerView = root.findViewById(R.id.exercise_recyclerView)
         val manager = LinearLayoutManager(context)
         exerciseRecyclerView.layoutManager = manager
         exerciseRecyclerView.adapter = customAdapter
 
+        // Observe for when the exercise list is updated
         exercisesViewModel.listOfExercises.observe(viewLifecycleOwner, Observer { exercise ->
             customAdapter.data(exercise)
         })
 
-        // Listen for when user is moving to the Add Exercises screen
+        // Listen for when user is moving to the Add Exercise screen
         val btnAddExercise: FloatingActionButton = root.findViewById(R.id.btn_add_exercise)
         btnAddExercise.setOnClickListener {
             findNavController().navigate(R.id.navigation_add_exercise)
         }
 
-        return binding.root
+        return root
     }
 
     override fun onDestroyView() {

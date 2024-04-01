@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 4,
-    "identityHash": "24840a6f9e4e8de6f61f77941c0176c0",
+    "identityHash": "57ad1a5199e2a464c79128a2087fd87b",
     "entities": [
       {
         "tableName": "exercise",
@@ -87,6 +87,70 @@
         "foreignKeys": []
       },
       {
+        "tableName": "workoutBuild",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`workoutBuildId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workoutId` INTEGER NOT NULL, `exerciseId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "workoutBuildId",
+            "columnName": "workoutBuildId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exerciseId",
+            "columnName": "exerciseId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "workoutBuildId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "workout",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`workoutId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workoutName` TEXT, `workoutNote` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "workoutId",
+            "columnName": "workoutId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "workoutName",
+            "columnName": "workoutName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "workoutNote",
+            "columnName": "workoutNote",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "workoutId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
         "tableName": "reflectionJournal",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`reflectionJournalId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `reflectionJournalEntry` TEXT, `reflectionJournalDate` TEXT)",
         "fields": [
@@ -122,7 +186,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '24840a6f9e4e8de6f61f77941c0176c0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '57ad1a5199e2a464c79128a2087fd87b')"
     ]
   }
 }

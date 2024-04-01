@@ -106,6 +106,20 @@
         <action
             android:id="@+id/action_navigation_workouts_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
+        <action
+            android:id="@+id/action_navigation_workouts_to_navigation_add_workout"
+            app:destination="@id/navigation_add_workout" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_workout"
+        android:name="com.example.wellnessjournal.ui.fitness.workouts.AddWorkoutFragment"
+        android:label="Add Workout"
+        tools:layout="@layout/fragment_add_workout"
+        >
+        <action
+            android:id="@+id/action_navigation_add_workout_to_navigation_workouts"
+            app:destination="@id/navigation_workouts" />
     </fragment>
 
     <fragment
