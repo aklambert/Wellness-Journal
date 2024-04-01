@@ -9,11 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wellnessjournal.ExerciseListAdapter
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.WorkoutListAdapter
-import com.example.wellnessjournal.data.entities.Workout
-import com.example.wellnessjournal.data.entities.WorkoutBuild
 import com.example.wellnessjournal.databinding.FragmentWorkoutsBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -36,7 +33,7 @@ class WorkoutsFragment : Fragment() {
         val workoutsViewModel = ViewModelProvider(this)[WorkoutsViewModel::class.java]
         val addWorkoutViewModel = ViewModelProvider(this)[AddWorkoutViewModel::class.java]
 
-        // Set up adapter with RecyclerView to show workouts from database
+        // Set up workout adapter with RecyclerView to show workouts from database
         val customAdapter = WorkoutListAdapter()
         val workoutRecyclerView: RecyclerView = root.findViewById(R.id.workout_recyclerView)
         val manager = LinearLayoutManager(context)

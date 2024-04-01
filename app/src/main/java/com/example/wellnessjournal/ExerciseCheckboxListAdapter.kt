@@ -4,16 +4,12 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.CheckBox
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Exercise
-import com.example.wellnessjournal.data.entities.Workout
+import com.example.wellnessjournal.ui.fitness.workouts.AddWorkoutFragmentDirections
 
 /**
  * Define custom adapter for RecyclerView for listing data items
@@ -21,7 +17,6 @@ import com.example.wellnessjournal.data.entities.Workout
 class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdapter.ViewHolder>() {
     private var exerciseChoices = listOf<Exercise>()
     private var selectedExercises = listOf<Exercise>()
-    private var workoutList = listOf<Workout>()
 
     // Setup ViewHolder(s) (view items used in each list item)
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -52,6 +47,15 @@ class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdap
                 selectedExercises -= item
             }
         }
+
+       /* if (viewHolder.itemView.findViewById<Button>(R.id.btn_save_workout) != null) {
+            // Listen for navigation from AddWorkout to Workout to pass selected exercises for building a workout
+            viewHolder.itemView.findViewById<Button>(R.id.btn_save_workout).setOnClickListener {
+                val action = AddWorkoutFragmentDirections.actionNavigationAddWorkoutToNavigationWorkouts(selectedExercises.toTypedArray())
+                viewHolder.itemView.findNavController().navigate(action)
+
+            }
+        }*/
     }
 
     // Set data to use and display, and notify data was changed
@@ -74,13 +78,5 @@ class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdap
     // Get list of selected items
     fun getSelectedItems(): List<Exercise> {
         return selectedExercises
-    }
-
-    fun addWorkoutToList(workout: Workout) {
-        workoutList += workout
-    }
-
-    fun getWorkoutList(): List<Workout> {
-        return workoutList
     }
 }

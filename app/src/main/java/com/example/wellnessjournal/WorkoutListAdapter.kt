@@ -5,19 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Workout
-import com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragmentDirections
 
 /**
  * Define custom adapter for RecyclerView for listing data items
  */
 class WorkoutListAdapter: RecyclerView.Adapter<WorkoutListAdapter.ViewHolder>() {
     private var workouts = listOf<Workout>()
-    private var latestWorkoutId = 0
 
     // Setup ViewHolder(s) (view items used in each list item)
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -44,16 +39,9 @@ class WorkoutListAdapter: RecyclerView.Adapter<WorkoutListAdapter.ViewHolder>() 
 
     // Set data to use and display, and notify data was changed
     @SuppressLint("NotifyDataSetChanged")
-    fun data(workout: List<Workout>): Int {
+    fun data(workout: List<Workout>) {
         this.workouts = workout
-        latestWorkoutId = workout.size - 1
         notifyDataSetChanged()
-        return latestWorkoutId
-    }
-
-    // Get list of selected items
-    fun getLastId(): Int {
-        return latestWorkoutId
     }
 
     // Get exercise list size

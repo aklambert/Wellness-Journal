@@ -17,7 +17,6 @@ import com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragmentDirecti
  */
 class ExerciseListAdapter: RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>() {
     private var exercises = listOf<Exercise>()
-    private var workouts = listOf<Workout>()
 
      // Setup ViewHolder(s) (view items used in each list item)
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -37,19 +36,15 @@ class ExerciseListAdapter: RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>(
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        if (exercises.size > 0) {
-            val item = exercises[position]
-            viewHolder.textView.text = item.exerciseName.toString()
+        val item = exercises[position]
+        viewHolder.textView.text = item.exerciseName.toString()
 
+        if (exercises.isNotEmpty()) {
+            // Listen for navigation from Exercises to UpdateExercise, to pass the current exercise data
             viewHolder.itemView.findViewById<ConstraintLayout>(R.id.list_item_constraintlayout).setOnClickListener {
                 val action = ExercisesFragmentDirections.actionNavigationExercisesToNavigationUpdateExercise(item)
                 viewHolder.itemView.findNavController().navigate(action)
             }
-        }
-
-        if (workouts.size > 0) {
-            val workoutItem = workouts[position]
-            viewHolder.textView.text = workoutItem.workoutName.toString()
         }
     }
 

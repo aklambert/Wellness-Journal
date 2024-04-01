@@ -46,18 +46,4 @@ class AddWorkoutViewModel(application: Application) : AndroidViewModel(applicati
         }
     }
 
-    /**
-     * Set the list of exercises that will be saved to a workout
-     */
-    fun setListOfExercises(exercises: List<Exercise>) {
-        exerciseList = exercises
-    }
-
-    /**
-     * Get the list of exercises that will be saved to a workout
-     */
-    fun getListOfExercises(): List<Exercise> {
-        return exerciseList
-    }
-
 }

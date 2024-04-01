@@ -56,22 +56,26 @@ class AddWorkoutFragment : Fragment() {
             customAdapter.data(exercise)
         })
 
+        // Get last workout Id for building the workout
+        var workoutId: Int = 1
+        addWorkoutViewModel.listOfWorkouts.observe(viewLifecycleOwner, Observer { workout ->
+            if (workout.isNotEmpty()) {
+                workoutId = workout.last().workoutId + 1
+            }
+        })
+
         // Listen for when user is saving a workout
         val saveBtn: Button = root.findViewById(R.id.btn_save_workout)
-
         saveBtn.setOnClickListener {
             // Get selected exercises to add to new workout
             val selectedExercises = customAdapter.getSelectedItems()
 
             // Create a new workout
-            val workout = createWorkout(root, addWorkoutViewModel)
+            createWorkout(root, addWorkoutViewModel)
 
-
-            // Save selected exercises for saving a workout build
-            addWorkoutViewModel.setListOfExercises(selectedExercises)
-
+            // Create workoutBuild
             for (exercise in selectedExercises) {
-                buildWorkout(exercise.exerciseId, workout.workoutId, addWorkoutViewModel)
+                buildWorkout(exercise.exerciseId, workoutId, addWorkoutViewModel)
             }
 
             findNavController().navigate(R.id.navigation_workouts)
@@ -93,7 +97,7 @@ class AddWorkoutFragment : Fragment() {
     /**
      * Create a new workout
      */
-    private fun createWorkout(root: View, viewModel: AddWorkoutViewModel): Workout {
+    private fun createWorkout(root: View, viewModel: AddWorkoutViewModel){
         // Get workout info
         val info = getWorkoutInfo(root)
         val name = info[0].toString()
@@ -102,8 +106,6 @@ class AddWorkoutFragment : Fragment() {
         // Save the workout
         val workout = Workout(0, name, notes)
         viewModel.saveWorkout(workout)
-
-        return workout
     }
 
     /**
