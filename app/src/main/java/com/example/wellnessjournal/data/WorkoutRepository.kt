@@ -7,6 +7,8 @@ import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
 import com.example.wellnessjournal.data.entityrelations.WorkoutWithWorkoutBuild
+import java.sql.RowId
+import kotlin.properties.Delegates
 
 class WorkoutRepository( private val workoutDao: WorkoutDao,
     private val workoutBuildDao: WorkoutBuildDao) {
@@ -15,6 +17,7 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
     // List of all saved workouts
     val listWorkouts: LiveData<List<Workout>> = workoutDao.getWorkouts()
     val listWorkoutWithWorkoutBuild: LiveData<List<WorkoutWithWorkoutBuild>> = workoutDao.getWorkoutBuildWithWorkout()
+    val lastWorkoutId: LiveData<Int> = workoutDao.getLastWorkoutId()
 
     /**
      * Create a new workout
@@ -35,6 +38,13 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
      */
     suspend fun deleteWorkout(workout: Workout) {
         workoutDao.deleteWorkout(workout)
+    }
+
+    /**
+     * Delete workout with certain workoutId
+     */
+    suspend fun deleteWorkoutWithId(workoutId: Int) {
+        workoutDao.deleteWorkoutWithId(workoutId)
     }
 
     // List of all saved workout builds (workouts built with saved exercises)
@@ -58,5 +68,12 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
      */
     suspend fun deleteWorkoutBuild(workoutBuild: WorkoutBuild) {
         workoutBuildDao.deleteWorkoutBuild(workoutBuild)
+    }
+
+    /**
+     * Delete existing workout build relating to a specific workout
+     */
+    suspend fun deleteWorkoutWorkoutBuild(workoutId: Int) {
+        workoutBuildDao.deleteWorkoutBuildsForWorkout(workoutId)
     }
 }

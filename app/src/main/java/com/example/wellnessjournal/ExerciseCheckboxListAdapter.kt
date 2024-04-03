@@ -47,15 +47,6 @@ class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdap
                 selectedExercises -= item
             }
         }
-
-       /* if (viewHolder.itemView.findViewById<Button>(R.id.btn_save_workout) != null) {
-            // Listen for navigation from AddWorkout to Workout to pass selected exercises for building a workout
-            viewHolder.itemView.findViewById<Button>(R.id.btn_save_workout).setOnClickListener {
-                val action = AddWorkoutFragmentDirections.actionNavigationAddWorkoutToNavigationWorkouts(selectedExercises.toTypedArray())
-                viewHolder.itemView.findNavController().navigate(action)
-
-            }
-        }*/
     }
 
     // Set data to use and display, and notify data was changed
