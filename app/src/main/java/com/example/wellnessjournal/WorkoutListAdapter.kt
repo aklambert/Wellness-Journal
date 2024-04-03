@@ -4,9 +4,15 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Workout
+import com.example.wellnessjournal.ui.fitness.workouts.AddWorkoutFragmentDirections
+import com.example.wellnessjournal.ui.fitness.workouts.UpdateWorkoutFragmentDirections
+import com.example.wellnessjournal.ui.fitness.workouts.WorkoutsFragmentDirections
 
 /**
  * Define custom adapter for RecyclerView for listing data items
@@ -35,6 +41,13 @@ class WorkoutListAdapter: RecyclerView.Adapter<WorkoutListAdapter.ViewHolder>() 
         val workoutItem = workouts[position]
         viewHolder.textView.text = workoutItem.workoutName.toString()
 
+        if (workouts.isNotEmpty()) {
+            // Listen for navigation from Workouts to UpdateWorkout, to pass the selected workout data
+            viewHolder.itemView.findViewById<ConstraintLayout>(R.id.list_item_constraintlayout).setOnClickListener {
+                val action = WorkoutsFragmentDirections.actionNavigationWorkoutsToNavigationUpdateWorkouts(workoutItem)
+                viewHolder.itemView.findNavController().navigate(action)
+            }
+        }
     }
 
     // Set data to use and display, and notify data was changed

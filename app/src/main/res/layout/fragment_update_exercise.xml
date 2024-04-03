@@ -216,7 +216,7 @@
             android:layout_marginTop="@dimen/margin_between_save_and_delete_btns"
             android:layout_marginBottom="@dimen/bottom_margin"
             android:paddingHorizontal="20dp"
-            android:text="@string/save_changes"
+            android:text="@string/save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

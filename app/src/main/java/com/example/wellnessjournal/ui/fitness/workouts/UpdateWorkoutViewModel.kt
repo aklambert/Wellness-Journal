@@ -1,50 +1,56 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
 import android.app.Application
+import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.data.WorkoutRepository
 import com.example.wellnessjournal.data.daos.WorkoutBuildDao
 import com.example.wellnessjournal.data.daos.WorkoutDao
-import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
-import com.example.wellnessjournal.data.entityrelations.WorkoutWithWorkoutBuild
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class AddWorkoutViewModel(application: Application) : AndroidViewModel(application) {
-    // Get Workout Daos to save exercise into a new workout
+class UpdateWorkoutViewModel(application: Application) : AndroidViewModel(application) {
+    // Get Workout Daos
     private val workoutBuildDao: WorkoutBuildDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutBuildDao()!!
     private val workoutDao: WorkoutDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutDao()!!
 
-    // Get repository for accessing WorkoutBuildDao and WorkoutDao methods
+    // Get workout repository
     private val workoutRepository: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao)
-    val listOfWorkouts: LiveData<List<Workout>> = workoutRepository.listWorkouts
-
-    // Last workoutId currently saved in database
-    val lastWorkoutId: LiveData<Int> = workoutRepository.lastWorkoutId
+    val listOfWorkoutBuilds: LiveData<List<WorkoutBuild>> = workoutRepository.listWorkoutBuilds
 
     /**
-     * Create a new workout
+     * Update an existing workout
      */
-    fun saveWorkout(workout: Workout) {
-        viewModelScope.launch(Dispatchers.IO){
-           workoutRepository.createWorkout(workout)
-        }
-    }
-
-    /**
-     * Save a new workout build
-     */
-    fun buildWorkout(workoutBuild: WorkoutBuild) {
+    fun updateWorkout(workout: Workout) {
         viewModelScope.launch(Dispatchers.IO) {
-            workoutRepository.createWorkoutBuild(workoutBuild)
+            workoutRepository.updateWorkout(workout)
         }
     }
 
+    /**
+     * Delete workout builds for previously saved workout
+     */
+    fun deleteWorkoutBuildsForWorkout(workoutId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            workoutRepository.deleteWorkoutWorkoutBuild(workoutId)
+        }
+    }
+
+    /**
+     * Delete an existing workout
+     */
+    fun deleteWorkoutWithId(workoutId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            workoutRepository.deleteWorkoutWithId(workoutId)
+        }
+    }
 }

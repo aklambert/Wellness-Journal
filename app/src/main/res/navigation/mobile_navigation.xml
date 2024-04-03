@@ -109,6 +109,9 @@
         <action
             android:id="@+id/action_navigation_workouts_to_navigation_add_workout"
             app:destination="@id/navigation_add_workout" />
+        <action
+            android:id="@+id/action_navigation_workouts_to_navigation_update_workouts"
+            app:destination="@id/navigation_update_workouts" />
     </fragment>
 
     <fragment
@@ -120,6 +123,19 @@
         <action
             android:id="@+id/action_navigation_add_workout_to_navigation_workouts"
             app:destination="@id/navigation_workouts" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_update_workouts"
+        android:name="com.example.wellnessjournal.ui.fitness.workouts.UpdateWorkoutFragment"
+        android:label="Update Workout"
+        tools:layout="@layout/fragment_update_workout">
+        <action
+            android:id="@+id/action_navigation_update_workouts_to_navigation_workouts"
+            app:destination="@id/navigation_workouts" />
+        <argument
+            android:name="selected_workout"
+            app:argType="com.example.wellnessjournal.data.entities.Workout" />
     </fragment>
 
     <fragment

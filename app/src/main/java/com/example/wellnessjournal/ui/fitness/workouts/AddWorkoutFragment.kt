@@ -58,10 +58,10 @@ class AddWorkoutFragment : Fragment() {
 
         // Get last workout Id for building the workout
         var workoutId: Int = 1
-        addWorkoutViewModel.listOfWorkouts.observe(viewLifecycleOwner, Observer { workout ->
-            if (workout.isNotEmpty()) {
-                workoutId = workout.last().workoutId + 1
-            }
+        addWorkoutViewModel.lastWorkoutId.observe(viewLifecycleOwner, Observer{ lastWorkoutId ->
+             if (lastWorkoutId != null) {
+                 workoutId = lastWorkoutId + 1
+             }
         })
 
         // Listen for when user is saving a workout
@@ -73,7 +73,7 @@ class AddWorkoutFragment : Fragment() {
             // Create a new workout
             createWorkout(root, addWorkoutViewModel)
 
-            // Create workoutBuild
+            // Create workoutBuilds
             for (exercise in selectedExercises) {
                 buildWorkout(exercise.exerciseId, workoutId, addWorkoutViewModel)
             }
