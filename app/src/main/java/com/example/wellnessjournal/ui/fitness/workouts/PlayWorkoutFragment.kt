@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,7 +19,9 @@ import com.example.wellnessjournal.ExerciseCheckboxListAdapter
 import com.example.wellnessjournal.ExercisesForWorkoutListAdapter
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.data.entities.Exercise
+import com.example.wellnessjournal.data.entities.WorkoutLog
 import com.example.wellnessjournal.databinding.FragmentPlayWorkoutBinding
+import java.time.LocalDate
 
 class PlayWorkoutFragment : Fragment() {
     private var _binding: FragmentPlayWorkoutBinding? = null
@@ -59,6 +62,15 @@ class PlayWorkoutFragment : Fragment() {
         // Show current workout name and notes
         root.findViewById<TextView>(R.id.name_workout).text = workout.workoutToPlay.workoutName
         root.findViewById<TextView>(R.id.workout_note).text = workout.workoutToPlay.workoutNote
+
+        // Listen for when someone logs a workout
+        root.findViewById<Button>(R.id.btn_log_workout).setOnClickListener {
+            // Get date to save in the log, and save it in the database
+            val date = LocalDate.now().toString()
+            val workoutLog = WorkoutLog(0, workout.workoutToPlay.workoutId, date)
+            playWorkoutVM.logWorkout(workoutLog)
+            findNavController().navigate(R.id.navigation_workouts)
+        }
 
         return root
     }

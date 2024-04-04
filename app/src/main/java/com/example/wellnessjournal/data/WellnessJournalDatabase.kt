@@ -9,15 +9,18 @@ import com.example.wellnessjournal.data.daos.ExerciseTypeDao
 import com.example.wellnessjournal.data.daos.WorkoutBuildDao
 import com.example.wellnessjournal.data.daos.WorkoutDao
 import com.example.wellnessjournal.data.daos.ReflectionJournalDao
+import com.example.wellnessjournal.data.daos.WorkoutLogDao
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.ExerciseType
 import com.example.wellnessjournal.data.entities.ReflectionJournal
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
+import com.example.wellnessjournal.data.entities.WorkoutLog
 
 @Database(
-    entities = [Exercise::class, ExerciseType::class, WorkoutBuild::class, Workout::class, ReflectionJournal::class],
-    version = 4
+    entities = [Exercise::class, ExerciseType::class, WorkoutBuild::class, Workout::class, ReflectionJournal::class,
+               WorkoutLog::class],
+    version = 5
 )
 abstract class WellnessJournalDatabase : RoomDatabase() {
     abstract fun ExerciseDao(): ExerciseDao
@@ -25,6 +28,7 @@ abstract class WellnessJournalDatabase : RoomDatabase() {
     abstract fun WorkoutBuildDao(): WorkoutBuildDao
     abstract fun WorkoutDao(): WorkoutDao
     abstract fun ReflectionJournalDao(): ReflectionJournalDao
+    abstract fun WorkoutLogDao(): WorkoutLogDao
 
     /**
      * Companion object for implementing the singleton design pattern (to only have one instance of
