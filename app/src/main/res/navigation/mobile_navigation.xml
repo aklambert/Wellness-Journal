@@ -55,6 +55,9 @@
         <action
             android:id="@+id/action_navigation_fitness_to_navigation_workouts"
             app:destination="@id/navigation_workouts" />
+        <action
+            android:id="@+id/action_navigation_fitness_to_navigation_workout_logs"
+            app:destination="@id/navigation_workout_logs" />
     </fragment>
 
     <fragment
@@ -191,6 +194,16 @@
         <argument
             android:name="workoutToPlay"
             app:argType="com.example.wellnessjournal.data.entities.Workout" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_workout_logs"
+        android:name="com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogFragment"
+        android:label="Workout Logs"
+        tools:layout="@layout/fragment_workout_log">
+        <action
+            android:id="@+id/action_navigation_workout_logs_to_navigation_fitness"
+            app:destination="@id/navigation_fitness" />
     </fragment>
 
 </navigation>

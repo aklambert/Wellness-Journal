@@ -62,4 +62,10 @@ interface WorkoutDao {
      */
     @Query("DELETE FROM workout WHERE workoutId = :workoutId")
     suspend fun deleteWorkoutWithId(workoutId: Int)
+
+    /**
+     * Get workout by id
+     */
+    @Query("SELECT * FROM workout WHERE workoutId = :workoutId")
+    fun getWorkoutById(workoutId: Int): LiveData<Workout>
 }
