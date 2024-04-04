@@ -61,6 +61,7 @@
     <string name="delete_reflection_journal">Delete</string>
     <string name="update_workout_name">Workout Name:</string>
     <string name="update_workout_instructions">Exercises for this workout:</string>
+    <string name="log_workout">Log workout</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

@@ -76,4 +76,11 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
     suspend fun deleteWorkoutWorkoutBuild(workoutId: Int) {
         workoutBuildDao.deleteWorkoutBuildsForWorkout(workoutId)
     }
+
+    /**
+     * Get workout builds for a certain workout
+     */
+    fun getWorkoutBuildsForWorkout(workoutId: Int): LiveData<List<WorkoutBuild>> {
+        return workoutBuildDao.getWorkoutBuildsForWorkout(workoutId)
+    }
 }

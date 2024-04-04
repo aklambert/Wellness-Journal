@@ -39,6 +39,12 @@ interface ExerciseDao {
     fun getExercises(): LiveData<List<Exercise>>
 
     /**
+     * Get an exercise by id
+     */
+    @Query("SELECT * FROM exercise WHERE exerciseId = :exerciseId")
+    fun getExerciseById(exerciseId: Int): LiveData<Exercise>
+
+    /**
      * Get exercises with their associated exercise types
      */
     @Transaction
