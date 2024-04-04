@@ -21,6 +21,7 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
     val listWorkouts: LiveData<List<Workout>> = workoutDao.getWorkouts()
     val listWorkoutWithWorkoutBuild: LiveData<List<WorkoutWithWorkoutBuild>> = workoutDao.getWorkoutBuildWithWorkout()
     val lastWorkoutId: LiveData<Int> = workoutDao.getLastWorkoutId()
+    val listWorkoutLogs: LiveData<List<WorkoutLog>> = workoutLogDao.getWorkoutLogs()
 
     /**
      * Create a new workout
@@ -106,5 +107,12 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
      */
     suspend fun deleteWorkoutLog(workoutLog: WorkoutLog) {
         workoutLogDao.deleteWorkoutLog(workoutLog)
+    }
+
+    /**
+     * Get a workout by id
+     */
+    fun getWorkoutById(workoutId: Int): LiveData<Workout> {
+        return workoutDao.getWorkoutById(workoutId)
     }
 }

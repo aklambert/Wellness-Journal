@@ -62,6 +62,7 @@
     <string name="update_workout_name">Workout Name:</string>
     <string name="update_workout_instructions">Exercises for this workout:</string>
     <string name="log_workout">Log workout</string>
+    <string name="title_workout_logs">Workout Logs</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

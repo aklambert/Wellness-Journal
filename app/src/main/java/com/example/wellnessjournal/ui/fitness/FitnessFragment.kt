@@ -26,6 +26,7 @@ class FitnessFragment : Fragment() {
 
         val exerciseCard: CardView = root.findViewById(R.id.exercises_card)
         val workoutsCard: CardView = root.findViewById(R.id.workouts_card)
+        val workoutLogCard: CardView = root.findViewById(R.id.workout_log_card)
 
         // Listen for when user is moving to the Exercises screen
         exerciseCard.setOnClickListener {
@@ -35,6 +36,11 @@ class FitnessFragment : Fragment() {
         // Listen for when user is moving to the Workouts screen
         workoutsCard.setOnClickListener {
             findNavController().navigate(R.id.navigation_workouts)
+        }
+
+        // Listen for when user is moving to the Workout Logs screen
+        workoutLogCard.setOnClickListener {
+            findNavController().navigate(R.id.navigation_workout_logs)
         }
 
         return root
