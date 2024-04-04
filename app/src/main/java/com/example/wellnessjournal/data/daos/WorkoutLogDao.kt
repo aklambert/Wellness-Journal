@@ -1,0 +1,29 @@
+package com.example.wellnessjournal.data.daos
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Update
+import com.example.wellnessjournal.data.entities.Workout
+import com.example.wellnessjournal.data.entities.WorkoutLog
+
+@Dao
+interface WorkoutLogDao {
+    /**
+     * Insert workout log
+     */
+    @Insert
+    suspend fun insertWorkoutLog(workoutLog: WorkoutLog)
+
+    /**
+     * Update existing workout log
+     */
+    @Update
+    suspend fun updateWorkoutLog(workoutLog: WorkoutLog)
+
+    /**
+     * Delete workout log
+     */
+    @Delete
+    suspend fun deleteWorkoutLog(workoutLog: WorkoutLog)
+}

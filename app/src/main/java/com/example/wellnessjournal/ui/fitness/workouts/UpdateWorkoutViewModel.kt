@@ -11,6 +11,7 @@ import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.data.WorkoutRepository
 import com.example.wellnessjournal.data.daos.WorkoutBuildDao
 import com.example.wellnessjournal.data.daos.WorkoutDao
+import com.example.wellnessjournal.data.daos.WorkoutLogDao
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
 import kotlinx.coroutines.Dispatchers
@@ -22,9 +23,11 @@ class UpdateWorkoutViewModel(application: Application) : AndroidViewModel(applic
         WellnessJournalDatabase.getDatabase(application)?.WorkoutBuildDao()!!
     private val workoutDao: WorkoutDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutDao()!!
-
+    private val workoutLogDao: WorkoutLogDao =
+        WellnessJournalDatabase.getDatabase(application)?.WorkoutLogDao()!!
     // Get workout repository
-    private val workoutRepository: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao)
+    private val workoutRepository: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao,
+        workoutLogDao)
     val listOfWorkoutBuilds: LiveData<List<WorkoutBuild>> = workoutRepository.listWorkoutBuilds
 
     /**

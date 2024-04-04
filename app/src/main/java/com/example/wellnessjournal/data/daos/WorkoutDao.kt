@@ -10,6 +10,7 @@ import androidx.room.Transaction
 import androidx.room.Update
 import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.wellnessjournal.data.entities.Workout
+import com.example.wellnessjournal.data.entities.WorkoutLog
 import com.example.wellnessjournal.data.entityrelations.WorkoutWithWorkoutBuild
 import java.sql.RowId
 
@@ -51,6 +52,10 @@ interface WorkoutDao {
     @Transaction
     @Query("SELECT * FROM workoutBuild")
     fun getWorkoutBuildWithWorkout(): LiveData<List<WorkoutWithWorkoutBuild>>
+
+    @Transaction
+    @Query("SELECT * FROM workoutLog")
+    fun getWorkoutLogsWithWorkout(): LiveData<List<WorkoutLog>>
 
     /**
      * Delete workout with a certain workoutId

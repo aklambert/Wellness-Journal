@@ -3,15 +3,18 @@ package com.example.wellnessjournal.data
 import androidx.lifecycle.LiveData
 import com.example.wellnessjournal.data.daos.WorkoutBuildDao
 import com.example.wellnessjournal.data.daos.WorkoutDao
+import com.example.wellnessjournal.data.daos.WorkoutLogDao
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
+import com.example.wellnessjournal.data.entities.WorkoutLog
 import com.example.wellnessjournal.data.entityrelations.WorkoutWithWorkoutBuild
 import java.sql.RowId
 import kotlin.properties.Delegates
 
 class WorkoutRepository( private val workoutDao: WorkoutDao,
-    private val workoutBuildDao: WorkoutBuildDao) {
+    private val workoutBuildDao: WorkoutBuildDao,
+    private val workoutLogDao: WorkoutLogDao) {
     private lateinit var exercisesForBuild: LiveData<List<Exercise>>
 
     // List of all saved workouts
@@ -82,5 +85,26 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
      */
     fun getWorkoutBuildsForWorkout(workoutId: Int): LiveData<List<WorkoutBuild>> {
         return workoutBuildDao.getWorkoutBuildsForWorkout(workoutId)
+    }
+
+    /**
+     * Add workout log
+     */
+    suspend fun addWorkoutLog(workoutLog: WorkoutLog) {
+        workoutLogDao.insertWorkoutLog(workoutLog)
+    }
+
+    /**
+     * Update workout log
+     */
+    suspend fun updateWorkoutLog(workoutLog: WorkoutLog) {
+        workoutLogDao.updateWorkoutLog(workoutLog)
+    }
+
+    /**
+     * Delete workout log
+     */
+    suspend fun deleteWorkoutLog(workoutLog: WorkoutLog) {
+        workoutLogDao.deleteWorkoutLog(workoutLog)
     }
 }
