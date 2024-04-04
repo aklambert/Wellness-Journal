@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_navigation_workouts_to_navigation_update_workouts"
             app:destination="@id/navigation_update_workouts" />
+        <action
+            android:id="@+id/action_navigation_workouts_to_navigation_play_workout"
+            app:destination="@id/navigation_play_workout" />
     </fragment>
 
     <fragment
@@ -174,6 +177,20 @@
         <argument
             android:name="savedReflectionJournal"
             app:argType="com.example.wellnessjournal.data.entities.ReflectionJournal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_play_workout"
+        android:name="com.example.wellnessjournal.ui.fitness.workouts.PlayWorkoutFragment"
+        android:label="Complete Workout"
+        tools:layout="@layout/fragment_play_workout">
+
+        <action
+            android:id="@+id/action_navigation_play_workout_to_navigation_workouts"
+            app:destination="@id/navigation_workouts" />
+        <argument
+            android:name="workoutToPlay"
+            app:argType="com.example.wellnessjournal.data.entities.Workout" />
     </fragment>
 
 </navigation>

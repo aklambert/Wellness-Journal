@@ -33,4 +33,12 @@ class ExerciseRepository(private val exerciseDao: ExerciseDao){
     suspend fun deleteExercise(exercise: Exercise) {
         exerciseDao.deleteExercise(exercise)
     }
+
+    /**
+     * Get exercise by id
+     */
+    fun getExerciseById(exerciseId: Int): LiveData<Exercise> {
+        return exerciseDao.getExerciseById(exerciseId)
+    }
+
 }
