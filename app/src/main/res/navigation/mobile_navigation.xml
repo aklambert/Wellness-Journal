@@ -204,6 +204,22 @@
         <action
             android:id="@+id/action_navigation_workout_logs_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
+        <action
+            android:id="@+id/action_navigation_workout_logs_to_navigation_workout_log_details"
+            app:destination="@id/navigation_workout_log_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_workout_log_details"
+        android:name="com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogDetailsFragment"
+        android:label="Workout Log Details"
+        tools:layout="@layout/fragment_workout_log_details">
+        <action
+            android:id="@+id/action_navigation_workout_log_details_to_navigation_workout_logs"
+            app:destination="@id/navigation_workout_logs" />
+        <argument
+            android:name="selectedWorkoutLog"
+            app:argType="com.example.wellnessjournal.data.entities.WorkoutLog" />
     </fragment>
 
 </navigation>

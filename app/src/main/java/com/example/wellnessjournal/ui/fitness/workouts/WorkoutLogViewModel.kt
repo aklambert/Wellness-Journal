@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.data.WorkoutRepository
 import com.example.wellnessjournal.data.daos.ExerciseDao
@@ -12,6 +13,8 @@ import com.example.wellnessjournal.data.daos.WorkoutDao
 import com.example.wellnessjournal.data.daos.WorkoutLogDao
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutLog
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class WorkoutLogViewModel(application: Application) : AndroidViewModel(application) {
     // Get related Daos
@@ -36,5 +39,14 @@ class WorkoutLogViewModel(application: Application) : AndroidViewModel(applicati
      */
     fun getWorkoutById(workoutId: Int): LiveData<Workout> {
         return workoutRepository.getWorkoutById(workoutId)
+    }
+
+    /**
+     * Delete a workout log
+     */
+    fun deleteWorkoutLog(workoutLog: WorkoutLog) {
+        viewModelScope.launch(Dispatchers.IO) {
+            workoutRepository.deleteWorkoutLog(workoutLog)
+        }
     }
 }

@@ -6,9 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelStore
+import androidx.lifecycle.ViewModelStoreOwner
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutLog
+import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogFragmentDirections
 import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogViewModel
 
 /**
@@ -17,6 +23,7 @@ import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogViewModel
 class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHolder>() {
     private var workoutLogs = listOf<WorkoutLog>()
     private var workouts = listOf<Workout>()
+    private lateinit var viewModelToUse: WorkoutLogViewModel
 
     /**
      * ViewHolder setup
@@ -52,9 +59,16 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
             val logItemWorkout = workouts[position]
             val itemText = logItem.workoutLogDate + ": " + logItemWorkout.workoutName
             holder.textView.text = itemText
+            holder.imageView.setImageResource(R.drawable.checkmark_icon)
         }
 
-        holder.imageView.setImageResource(R.drawable.checkmark_icon)
+        // Listen for user seeing details for specific workout log
+        if (workoutLogs.isNotEmpty()) {
+                holder.itemView.findViewById<ConstraintLayout>(R.id.list_item_constraintlayout).setOnClickListener {
+                val action = WorkoutLogFragmentDirections.actionNavigationWorkoutLogsToNavigationWorkoutLogDetails(logItem)
+                holder.itemView.findNavController().navigate(action)
+            }
+        }
     }
 
     /**
