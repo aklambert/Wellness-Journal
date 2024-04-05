@@ -4,17 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.journal.reflectionJournal.JournalFragment">
+    tools:context=".ui.journal.goals.GoalsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/journal_recyclerView"
+        android:id="@+id/goals_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/journal_entry_layout"
         android:layout_marginBottom="@dimen/bottom_margin"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_add_journal_entry"
+        android:id="@+id/btn_add_goal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"

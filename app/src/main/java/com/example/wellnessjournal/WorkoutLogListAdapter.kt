@@ -34,7 +34,7 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
     }
 
     /**
-     * Create new views for each list item
+     * Create new view for list items
      */
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.list_item, viewGroup, false)
@@ -49,7 +49,7 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
     }
 
     /**
-     * Replace the new list item content with data
+     * Replace the list content with new data
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val logItem = workoutLogs[position]

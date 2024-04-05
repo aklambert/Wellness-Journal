@@ -146,7 +146,7 @@
 
     <fragment
         android:id="@+id/navigation_journal"
-        android:name="com.example.wellnessjournal.ui.journal.JournalFragment"
+        android:name="com.example.wellnessjournal.ui.journal.reflectionJournal.JournalFragment"
         android:label="Reflection Journal"
         tools:layout="@layout/fragment_journal">
         <action
@@ -161,7 +161,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_add_reflection_journal"
-        android:name="com.example.wellnessjournal.ui.journal.AddReflectionJournalFragment"
+        android:name="com.example.wellnessjournal.ui.journal.reflectionJournal.AddReflectionJournalFragment"
         android:label="Add Reflection Journal"
         tools:layout="@layout/fragment_add_reflection_journal">
 
@@ -169,7 +169,7 @@
 
     <fragment
         android:id="@+id/navigation_update_reflection_journal"
-        android:name="com.example.wellnessjournal.ui.journal.UpdateReflectionJournalFragment"
+        android:name="com.example.wellnessjournal.ui.journal.reflectionJournal.UpdateReflectionJournalFragment"
         android:label="Update Reflection Journal"
         tools:layout="@layout/fragment_update_reflection_journal">
 
@@ -186,6 +186,9 @@
         <action
             android:id="@+id/action_navigation_journal_features_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_journal_features_to_navigation_goals"
+            app:destination="@id/navigation_goals" />
 
     </fragment>
 
@@ -227,6 +230,31 @@
         <argument
             android:name="selectedWorkoutLog"
             app:argType="com.example.wellnessjournal.data.entities.WorkoutLog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_goals"
+        android:name="com.example.wellnessjournal.ui.journal.goals.GoalsFragment"
+        android:label="Goals"
+        tools:layout="@layout/fragment_goals">
+
+        <action
+            android:id="@+id/action_navigation_goals_to_navigation_journal_features"
+            app:destination="@id/navigation_journal_features" />
+        <action
+            android:id="@+id/action_navigation_goals_to_navigation_add_goal"
+            app:destination="@id/navigation_add_goal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_goal"
+        android:name="com.example.wellnessjournal.ui.journal.goals.AddGoalFragment"
+        android:label="Add Goal"
+        tools:layout="@layout/fragment_add_goal">
+
+        <action
+            android:id="@+id/action_navigation_add_goal_to_navigation_goals"
+            app:destination="@id/navigation_goals" />
     </fragment>
 
 </navigation>

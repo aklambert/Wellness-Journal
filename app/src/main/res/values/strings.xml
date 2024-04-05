@@ -66,6 +66,7 @@
     <string name="journal_icon">journal icon</string>
     <string name="title_reflection_journal">Journal</string>
     <string name="title_goals">Goals</string>
+    <string name="enter_goal_description">Enter your goal</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

@@ -31,6 +31,11 @@ class JournalFeaturesFragment : Fragment() {
             findNavController().navigate(R.id.navigation_journal)
         }
 
+        // Listen for someone going to the Goals screen
+        goalsCard.setOnClickListener {
+            findNavController().navigate(R.id.navigation_goals)
+        }
+
         return root
     }
 }
