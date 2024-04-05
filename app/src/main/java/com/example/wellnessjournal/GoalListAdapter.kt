@@ -10,6 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Goal
 import com.example.wellnessjournal.data.entities.ReflectionJournal
+import com.example.wellnessjournal.ui.journal.goals.GoalsFragmentDirections
 import com.example.wellnessjournal.ui.journal.reflectionJournal.JournalFragmentDirections
 
 class GoalListAdapter: RecyclerView.Adapter<GoalListAdapter.ViewHolder>() {
@@ -46,7 +47,12 @@ class GoalListAdapter: RecyclerView.Adapter<GoalListAdapter.ViewHolder>() {
         // contents of the view with that element
         val item = goals[position]
         holder.goalTv.text = item.goalDescription.toString()
-        holder.goalCreationDateTv.text = item.goalCreationDate.toString()
+        holder.goalCreationDateTv.text = item.goalCreationDate
+
+        holder.itemView.findViewById<ConstraintLayout>(R.id.journal_item_constraintlayout).setOnClickListener {
+            val action = GoalsFragmentDirections.actionNavigationGoalsToNavigationUpdateGoal(item)
+            holder.itemView.findNavController().navigate(action)
+        }
 
     }
 

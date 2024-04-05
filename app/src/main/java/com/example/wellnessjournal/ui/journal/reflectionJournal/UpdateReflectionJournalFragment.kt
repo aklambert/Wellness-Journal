@@ -55,6 +55,8 @@ class UpdateReflectionJournalFragment : Fragment() {
         val entryET: EditText = view.findViewById(R.id.input_reflection_journal_entry)
         val entry = entryET.text.toString()
         val currentId = savedReflectionJournal.savedReflectionJournal.reflectionJournalId
+
+        // Update the journal entry date to reflect the last edit
         val currentDate = LocalDate.now().toString()
         val reflectionJournal: ReflectionJournal = ReflectionJournal(currentId, entry, currentDate)
 
