@@ -1,6 +1,5 @@
-package com.example.wellnessjournal.ui.journal
+package com.example.wellnessjournal.ui.journal.reflectionJournal
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,7 +36,7 @@ class JournalFragment : Fragment() {
         recyclerView.layoutManager = manager
         recyclerView.adapter = customAdapter
 
-        journalVM.listReflectionJournalsa.observe(viewLifecycleOwner, Observer { reflectionJournal ->
+        journalVM.listReflectionJournals.observe(viewLifecycleOwner, Observer { reflectionJournal ->
             customAdapter.data(reflectionJournal)
         })
 

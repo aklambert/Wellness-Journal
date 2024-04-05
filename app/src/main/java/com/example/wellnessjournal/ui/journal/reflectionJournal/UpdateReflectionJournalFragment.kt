@@ -1,6 +1,5 @@
-package com.example.wellnessjournal.ui.journal
+package com.example.wellnessjournal.ui.journal.reflectionJournal
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,7 +13,6 @@ import androidx.navigation.fragment.navArgs
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.data.entities.ReflectionJournal
 import com.example.wellnessjournal.databinding.FragmentUpdateReflectionJournalBinding
-import com.example.wellnessjournal.ui.fitness.exercises.UpdateExerciseViewModel
 import java.time.LocalDate
 
 class UpdateReflectionJournalFragment : Fragment() {
