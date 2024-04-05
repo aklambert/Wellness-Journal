@@ -17,7 +17,7 @@
         android:title="@string/title_timer" />
 
     <item
-        android:id="@+id/navigation_journal"
+        android:id="@+id/navigation_journal_features"
         android:icon="@drawable/journal_navigation_icon"
         android:title="@string/title_journal"/>
 

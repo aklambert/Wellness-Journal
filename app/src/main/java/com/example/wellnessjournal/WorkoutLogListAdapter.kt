@@ -23,7 +23,6 @@ import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogViewModel
 class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHolder>() {
     private var workoutLogs = listOf<WorkoutLog>()
     private var workouts = listOf<Workout>()
-    private lateinit var viewModelToUse: WorkoutLogViewModel
 
     /**
      * ViewHolder setup

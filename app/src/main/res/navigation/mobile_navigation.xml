@@ -27,8 +27,8 @@
             android:id="@+id/action_navigation_home_to_navigation_fitness"
             app:destination="@id/navigation_fitness" />
         <action
-            android:id="@+id/action_navigation_home_to_navigation_journal"
-            app:destination="@id/navigation_journal" />
+            android:id="@+id/action_navigation_home_to_navigation_journal_features"
+            app:destination="@id/navigation_journal_features" />
     </fragment>
 
     <fragment
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/navigation_fitness"
         android:name="com.example.wellnessjournal.ui.fitness.FitnessFragment"
-        android:label="@string/title_fitness"
+        android:label="Fitness Features"
         tools:layout="@layout/fragment_fitness" >
         <action
             android:id="@+id/action_navigation_fitness_to_navigation_home"
@@ -145,28 +145,26 @@
     </fragment>
 
     <fragment
-        android:id="@id/navigation_journal"
+        android:id="@+id/navigation_journal"
         android:name="com.example.wellnessjournal.ui.journal.JournalFragment"
         android:label="Reflection Journal"
         tools:layout="@layout/fragment_journal">
-        <action
-            android:id="@+id/action_navigation_journal_to_navigation_home"
-            app:destination="@id/navigation_home" />
         <action
             android:id="@+id/action_navigation_journal_to_navigation_add_reflection_journal"
             app:destination="@id/navigation_add_reflection_journal" />
         <action
             android:id="@+id/action_navigation_journal_to_navigation_update_reflection_journal"
             app:destination="@id/navigation_update_reflection_journal" />
+        <action
+            android:id="@+id/action_navigation_journal_to_navigation_journal_features"
+            app:destination="@id/navigation_journal_features" />
     </fragment>
     <fragment
         android:id="@+id/navigation_add_reflection_journal"
         android:name="com.example.wellnessjournal.ui.journal.AddReflectionJournalFragment"
         android:label="Add Reflection Journal"
         tools:layout="@layout/fragment_add_reflection_journal">
-        <action
-            android:id="@+id/action_navigation_add_reflection_journal_to_navigation_journal"
-            app:destination="@id/navigation_journal" />
+
     </fragment>
 
     <fragment
@@ -174,12 +172,21 @@
         android:name="com.example.wellnessjournal.ui.journal.UpdateReflectionJournalFragment"
         android:label="Update Reflection Journal"
         tools:layout="@layout/fragment_update_reflection_journal">
-        <action
-            android:id="@+id/action_navigation_update_reflection_journal_to_navigation_journal"
-            app:destination="@id/navigation_journal" />
+
         <argument
             android:name="savedReflectionJournal"
             app:argType="com.example.wellnessjournal.data.entities.ReflectionJournal" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_journal_features"
+        android:name="com.example.wellnessjournal.ui.journal.JournalFeaturesFragment"
+        android:label="Journal Features"
+        tools:layout="@layout/fragment_journal_features">
+        <action
+            android:id="@+id/action_navigation_journal_features_to_navigation_home"
+            app:destination="@id/navigation_home" />
+
     </fragment>
 
     <fragment

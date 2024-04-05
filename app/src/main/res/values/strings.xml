@@ -8,6 +8,7 @@
     <string name="title_timer">Timer</string>
     <string name="title_fitness">Fitness</string>
     <string name="title_exercises">Exercises</string>
+    <string name="title_journal">Journal</string>
 
     <!-- Welcome Screen -->
     <string name="Hello">Hello!</string>
@@ -54,7 +55,6 @@
     <string name="name_workout_instructions">Name your new workout:</string>
     <string name="workout_name">Workout name</string>
     <string name="workout_notes">Workout notes</string>
-    <string name="title_journal">Journal</string>
     <string name="example_date">2/20/2024</string>
     <string name="example_journal_entry">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="journal_entry">Journal entry</string>
@@ -63,6 +63,9 @@
     <string name="update_workout_instructions">Exercises for this workout:</string>
     <string name="log_workout">Log workout</string>
     <string name="title_workout_logs">Workout Logs</string>
+    <string name="journal_icon">journal icon</string>
+    <string name="title_reflection_journal">Journal</string>
+    <string name="title_goals">Goals</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">
