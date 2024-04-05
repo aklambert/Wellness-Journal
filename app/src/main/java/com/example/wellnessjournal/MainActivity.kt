@@ -29,9 +29,11 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.navigation_home,
                 R.id.navigation_timer,
-                R.id.navigation_fitness
+                R.id.navigation_fitness,
+                R.id.navigation_journal_features
             )
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         val currentNavPosition = navController.currentDestination

@@ -24,6 +24,7 @@ class FitnessFragment : Fragment() {
         _binding = FragmentFitnessBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        // Get feature cards
         val exerciseCard: CardView = root.findViewById(R.id.exercises_card)
         val workoutsCard: CardView = root.findViewById(R.id.workouts_card)
         val workoutLogCard: CardView = root.findViewById(R.id.workout_log_card)

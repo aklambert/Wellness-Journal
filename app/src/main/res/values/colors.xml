@@ -5,6 +5,7 @@
     <color name="primary_color">#495AB6</color> <!-- initially purple_500 -->
     <color name="primary_color_variant1">#6D7BC5</color> <!-- initially purple_700 -->
     <color name="primary_color_variant2">#BDC3E5</color> <!-- initially teal_200 -->
+    <color name="primary_color_variant3">#E1E5FD</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
