@@ -12,7 +12,7 @@
 
     <!-- Welcome Screen -->
     <string name="Hello">Hello!</string>
-    <string name="welcome_message">Welcome to Fitness Journal, where you can customize fitness
+    <string name="welcome_message">Welcome to Wellness Journal, where you can customize fitness
         tracking and journaling all in one place.</string>
     <string name="btn_begin">Begin</string>
 

@@ -8,7 +8,7 @@
     <dimen name="card_corner_radius">10dp</dimen>
 
     <!-- bottom margins -->
-    <dimen name="bottom_margin">56dp</dimen>
+    <dimen name="bottom_margin">88dp</dimen>
     <dimen name="floating_btn_bottom_margin">72dp</dimen>
 
     <!-- Top margins -->
