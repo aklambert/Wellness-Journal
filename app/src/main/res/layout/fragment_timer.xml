@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".ui.timer.TimerFragment">
 
         <EditText
@@ -107,7 +107,7 @@
             android:layout_width="205dp"
             android:layout_height="@dimen/button_height"
             android:layout_marginTop="64dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="@dimen/bottom_margin"
             android:text="@string/start_timer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
