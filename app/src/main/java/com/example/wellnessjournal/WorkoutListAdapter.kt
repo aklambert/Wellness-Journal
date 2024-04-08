@@ -43,6 +43,8 @@ class WorkoutListAdapter: RecyclerView.Adapter<WorkoutListAdapter.ViewHolder>() 
         val workoutItem = workouts[position]
         viewHolder.textView.text = workoutItem.workoutName.toString()
         viewHolder.imageView.setImageResource(R.drawable.play_icon)
+        viewHolder.imageView.layoutParams.height = 150
+        viewHolder.imageView.layoutParams.width = 150
 
         if (workouts.isNotEmpty()) {
             // Listen for navigation from Workouts to UpdateWorkout, to pass the selected workout data
