@@ -42,8 +42,10 @@ class MainActivity : AppCompatActivity() {
         if (currentNavPosition != null) {
             if (currentNavPosition.label == "Welcome") {
                 navView.visibility = View.GONE
-            } else {
+                supportActionBar?.hide()
 
+            } else {
+                supportActionBar?.show()
                 navView.visibility = View.VISIBLE
             }
         }
