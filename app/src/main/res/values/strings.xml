@@ -67,6 +67,15 @@
     <string name="title_reflection_journal">Journal</string>
     <string name="title_goals">Goals</string>
     <string name="enter_goal_description">Enter your goal</string>
+    <string name="week_workout_data_msg">Days with logged workouts this week:</string>
+    <string name="sunday">Sunday</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="green_checkmark">green checkmark</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">
