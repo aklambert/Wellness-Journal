@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.room.Room
 import com.example.wellnessjournal.R
-import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.databinding.FragmentWelcomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -44,15 +42,13 @@ class WelcomeFragment : Fragment() {
 
         /* Listen for when the user clicks the BEGIN button on the welcome screen, and take note so that the welcome screen
          does not show again */
-        val btnBegin = root.findViewById<Button>(R.id.btn_start_timer) as Button
+        val btnBegin = root.findViewById<Button>(R.id.btn_begin) as Button
         btnBegin.setOnClickListener {
 
             // Set shared preference setting to prevent welcome screen from appearing again
             val prefsEditor: SharedPreferences.Editor = prefs.edit()
             prefsEditor.putBoolean("welcome_screen_disable", true)
             prefsEditor.apply()
-
-
 
             // Move to home screen
             findNavController().navigate(R.id.navigation_home)
