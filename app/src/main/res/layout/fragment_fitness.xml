@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fitness_scrollview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -12,54 +13,71 @@
             android:layout_height="wrap_content"
             >
 
+                <ImageView
+                    android:id="@+id/exercise_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/exercise_equipment_image"
+                    android:src="@drawable/exercise_equipment_img2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0"
+                    />
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/exercises_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="88dp"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="@dimen/activity_vertical_margin"
                     android:backgroundTint="@color/primary_color_variant3"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="@dimen/card_corner_radius"
-                    app:cardElevation="@dimen/card_elevation"
                     app:layout_constraintVertical_bias="0"
+                    app:cardElevation="@dimen/card_elevation"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    >
+                    app:layout_constraintTop_toBottomOf="@id/exercise_img">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center">
+                            android:layout_gravity="end"
+                            >
 
                                 <ImageView
                                     android:id="@+id/exercise_card_icon"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_width="70dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_margin="@dimen/activity_vertical_margin"
                                     android:contentDescription="@string/logo_weight_description"
+                                    android:scaleType="centerCrop"
+                                    android:adjustViewBounds="true"
                                     android:src="@drawable/fitness_navigation_icon"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.172" />
+                                    app:layout_constraintVertical_bias="0"
+                                    app:layout_constraintHorizontal_bias="0"/>
 
                                 <TextView
                                     style="@style/style_header3"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_margin="@dimen/activity_vertical_margin"
                                     android:gravity="center"
                                     android:text="@string/title_exercises"
                                     android:textColor="@color/primary_color"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/exercise_card_icon" />
+                                    app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -68,7 +86,7 @@
                     android:id="@+id/workouts_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="88dp"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="@dimen/activity_vertical_margin"
                     android:backgroundTint="@color/primary_color_variant3"
                     android:clickable="true"
@@ -84,24 +102,28 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_gravity="center">
+                            >
 
                                 <ImageView
                                     android:id="@+id/workout_card_icon"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_margin="@dimen/activity_vertical_margin"
+                                    android:scaleType="centerCrop"
+                                    android:adjustViewBounds="true"
                                     android:contentDescription="@string/logo_weight_description"
                                     android:src="@drawable/logov2"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.172" />
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintVertical_bias="0"
+                                     />
 
                                 <TextView
                                     style="@style/style_header3"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="50dp"
                                     android:layout_margin="@dimen/activity_vertical_margin"
                                     android:gravity="center"
@@ -109,8 +131,7 @@
                                     android:textColor="@color/primary_color"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/workout_card_icon" />
+                                    app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
@@ -119,7 +140,7 @@
                     android:id="@+id/workout_log_card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="88dp"
+                    android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="@dimen/activity_vertical_margin"
                     android:backgroundTint="@color/primary_color_variant3"
                     android:clickable="true"
@@ -135,13 +156,12 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center">
+                            android:layout_height="match_parent">
 
                                 <ImageView
                                     android:id="@+id/workout_log_card_icon"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_width="65dp"
+                                    android:layout_height="wrap_content"
                                     android:layout_margin="@dimen/activity_vertical_margin"
                                     android:contentDescription="@string/logo_weight_description"
                                     android:src="@drawable/checkmark_icon"
@@ -149,11 +169,12 @@
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toTopOf="parent"
-                                    app:layout_constraintVertical_bias="0.172" />
+                                    app:layout_constraintVertical_bias="0"
+                                    app:layout_constraintHorizontal_bias="0"/>
 
                                 <TextView
                                     style="@style/style_header3"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="@dimen/activity_vertical_margin"
                                     android:gravity="center"
@@ -161,8 +182,7 @@
                                     android:textColor="@color/primary_color"
                                     app:layout_constraintBottom_toBottomOf="parent"
                                     app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toBottomOf="@id/workout_log_card_icon" />
+                                    app:layout_constraintTop_toTopOf="parent" />
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
