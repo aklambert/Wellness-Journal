@@ -21,4 +21,5 @@
 
     <!-- elevation -->
     <dimen name="card_elevation">4dp</dimen>
+    <dimen name="weekday_margin">24dp</dimen>
 </resources>

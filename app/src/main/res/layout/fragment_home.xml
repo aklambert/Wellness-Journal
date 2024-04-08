@@ -1,22 +1,245 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_margin="@dimen/text_margin"
+        >
+
+        <TextView
+            android:id="@+id/text_msg"
+            style="@style/style_header2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/text_margin"
+            android:gravity="center"
+            app:layout_constraintVertical_bias="0"
+            android:layout_marginTop="@dimen/text_margin"
+            android:text="@string/week_workout_data_msg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/text_Sunday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"
+            android:layout_marginEnd="152dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:gravity="center"
+            android:text="@string/sunday"
+            style="@style/style_header3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_msg" />
+
+        <ImageView
+            android:id="@+id/sunday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_Sunday"
+            app:layout_constraintTop_toBottomOf="@+id/text_msg"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/text_monday"
+            style="@style/style_header3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"
+            android:layout_marginEnd="152dp"
+            android:gravity="center"
+            android:text="@string/monday"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_Sunday"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/monday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_monday"
+            app:layout_constraintTop_toBottomOf="@+id/text_Sunday"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/text_tuesday"
+            style="@style/style_header3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"
+            android:layout_marginEnd="152dp"
+            android:gravity="center"
+            android:text="@string/tuesday"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_monday"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/tuesday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_tuesday"
+            app:layout_constraintTop_toBottomOf="@+id/text_monday"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/text_wednesday"
+            style="@style/style_header3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"
+            android:layout_marginEnd="152dp"
+            android:gravity="center"
+            android:text="@string/wednesday"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tuesday"
+            app:layout_constraintVertical_bias="0" />
+
+        <ImageView
+            android:id="@+id/wednesday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_wednesday"
+            app:layout_constraintTop_toBottomOf="@+id/text_tuesday"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/text_thursday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"
+            android:layout_marginEnd="152dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:gravity="center"
+            android:text="@string/thursday"
+            style="@style/style_header3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_wednesday" />
+
+        <ImageView
+            android:id="@+id/thursday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_thursday"
+            app:layout_constraintTop_toBottomOf="@+id/text_wednesday"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/text_friday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"
+            android:layout_marginEnd="152dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:gravity="center"
+            android:text="@string/friday"
+            style="@style/style_header3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_thursday" />
+
+        <ImageView
+            android:id="@+id/friday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_friday"
+            app:layout_constraintTop_toBottomOf="@+id/text_thursday"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/text_saturday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weekday_margin"            android:layout_marginEnd="152dp"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintHorizontal_bias="0"
+            android:gravity="center"
+            android:text="@string/saturday"
+            style="@style/style_header3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_friday" />
+
+        <ImageView
+            android:id="@+id/saturday_checkmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/green_checkmark"
+            android:src="@drawable/log_success_icon"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/text_saturday"
+            app:layout_constraintTop_toBottomOf="@+id/text_friday"
+            app:layout_constraintVertical_bias="0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
