@@ -117,7 +117,7 @@ class TimerFragment : Fragment() {
     /**
      * Start the timer
      */
-    private fun startTimer(root: View, timer_btn: Button, prefs: SharedPreferences, time: Long) {
+    private fun startTimer(root: View, timerBtn: Button, prefs: SharedPreferences, time: Long) {
 
         val editTextHours: TextView = root.findViewById(R.id.input_hours)
         val editTextMinutes: TextView = root.findViewById(R.id.input_minutes)
@@ -135,9 +135,9 @@ class TimerFragment : Fragment() {
         colon2.visibility = View.GONE
 
         // Show the button as a STOP TIMER button
-        timer_btn.text = getString(R.string.stop_timer)
+        timerBtn.text = getString(R.string.stop_timer)
         context?.let { ContextCompat.getColor(it, R.color.danger) }
-            ?.let { timer_btn.setBackgroundColor(it) }
+            ?.let { timerBtn.setBackgroundColor(it) }
 
         // Start the timer and show timer remaining
         timer = object : CountDownTimer(time, 1) {
@@ -146,7 +146,7 @@ class TimerFragment : Fragment() {
             }
 
             override fun onFinish() {
-                timerProgressView.text = "Timer Finished!"
+                timerProgressView.text = getString(R.string.timer_finished)
                 val alarm: MediaPlayer = MediaPlayer.create(context, R.raw.simple_notification)
                 alarm.start()
             }

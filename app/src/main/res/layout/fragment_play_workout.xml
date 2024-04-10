@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_color_variant3"
     tools:context=".ui.fitness.workouts.UpdateWorkoutFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +23,7 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginHorizontal="@dimen/text_margin"
             android:gravity="center"
-            style="@style/style_header3"
+            style="@style/style_header2"
             />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -39,12 +40,39 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
+            android:id="@+id/tv_timer_title"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/min_height"
+            android:text="@string/title_timer"
+            style="@style/style_header2"
+            app:layout_constraintTop_toBottomOf="@+id/exercises_for_workout_recyclerView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            android:layout_margin="@dimen/text_margin"
+            />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@id/nested_timer_fragment"
+            android:name="com.example.wellnessjournal.ui.timer.TimerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_timer_title"
+            app:layout_constraintVertical_bias="0"
+            tools:layout="@layout/fragment_timer">
+        </androidx.fragment.app.FragmentContainerView>
+
+        <TextView
             android:id="@+id/tv_exercise_note"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
-            android:text="@string/notes"
-            style="@style/style_header3"
-            app:layout_constraintTop_toBottomOf="@+id/exercises_for_workout_recyclerView"
+            android:text="@string/notes_no_colon"
+            style="@style/style_header2"
+            app:layout_constraintTop_toBottomOf="@+id/nested_timer_fragment"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

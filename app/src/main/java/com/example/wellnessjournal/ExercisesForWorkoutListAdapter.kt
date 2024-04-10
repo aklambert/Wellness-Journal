@@ -39,26 +39,15 @@ class ExercisesForWorkoutListAdapter: RecyclerView.Adapter<ExercisesForWorkoutLi
 
         // Track number of exercise components that have info to display, to manage vertical spacing
         // between exercise name/ title and the rest of the exercise information
-        var infoItems = 0
         var cardInfo: String = name
         if (intensity.isNotEmpty()) {
-            cardInfo += intensity
-            infoItems++
+            cardInfo += "\n$intensity"
         }
         if (duration.isNotEmpty()) {
-            cardInfo += if(infoItems >= 1) {
-                "\n$duration"
-            } else {
-                duration
-            }
-            infoItems++
+            cardInfo += "\n$duration"
         }
         if (volume.isNotEmpty()) {
-            cardInfo += if (infoItems >= 1) {
-                "\n$volume"
-            } else {
-                volume
-            }
+            cardInfo += "\n$volume"
         }
 
         holder.checkBox.text = cardInfo

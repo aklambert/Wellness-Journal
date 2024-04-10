@@ -9,7 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.timer.TimerFragment">
+        tools:context=".ui.timer.TimerFragment"
+        android:layout_gravity="center">
 
         <EditText
             android:id="@+id/input_seconds"
@@ -30,7 +31,7 @@
             app:layout_constraintHorizontal_bias="0.947"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.469" />
+            app:layout_constraintVertical_bias="0" />
 
         <TextView
             android:id="@+id/colon2"
@@ -44,7 +45,7 @@
             app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toEndOf="@+id/input_minutes"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.471" />
+            app:layout_constraintVertical_bias="0" />
 
         <EditText
             android:id="@+id/input_minutes"
@@ -64,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.466" />
+            app:layout_constraintVertical_bias="0" />
 
         <TextView
             android:id="@+id/colon1"
@@ -78,7 +79,7 @@
             app:layout_constraintHorizontal_bias="0.523"
             app:layout_constraintStart_toEndOf="@+id/input_hours"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.471" />
+            app:layout_constraintVertical_bias="0" />
 
         <EditText
             android:id="@+id/input_hours"
@@ -99,7 +100,7 @@
             app:layout_constraintHorizontal_bias="0.052"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.47" />
+            app:layout_constraintVertical_bias="0" />
 
         <Button
             android:id="@+id/btn_timer"
@@ -107,13 +108,13 @@
             android:layout_width="205dp"
             android:layout_height="@dimen/button_height"
             android:layout_marginTop="64dp"
-            android:layout_marginBottom="@dimen/bottom_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:text="@string/start_timer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_minutes"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0"
             tools:ignore="TextSizeCheck" />
 
         <TextView

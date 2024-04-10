@@ -41,6 +41,7 @@
     <string name="intensity">Intensity:</string>
     <string name="volume">Volume:</string>
     <string name="notes">Notes:</string>
+    <string name="notes_no_colon">Notes</string>
     <string name="save">Save</string>
     <string name="exercise_name">Exercise Name</string>
     <string name="exercise_type">Exercise Type</string>
@@ -77,6 +78,8 @@
     <string name="saturday">Saturday</string>
     <string name="green_checkmark">green checkmark</string>
     <string name="journal_image">journal image</string>
+    <string name="title_timer_colon">Timer:</string>
+    <string name="timer_finished">Timer Finished!</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">
