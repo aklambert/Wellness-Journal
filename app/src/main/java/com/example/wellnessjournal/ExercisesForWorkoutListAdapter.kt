@@ -32,6 +32,36 @@ class ExercisesForWorkoutListAdapter: RecyclerView.Adapter<ExercisesForWorkoutLi
         // contents of the view with that element
         val item = exercisesForWorkout[position]
         holder.checkBox.text = item.exerciseName.toString()
+        val name = item.exerciseName.toString()
+        val intensity = item.exerciseIntensity.toString()
+        val duration = item.exerciseTime.toString()
+        val volume = item.exerciseVolume.toString()
+
+        // Track number of exercise components that have info to display, to manage vertical spacing
+        // between exercise name/ title and the rest of the exercise information
+        var infoItems = 0
+        var cardInfo: String = name
+        if (intensity.isNotEmpty()) {
+            cardInfo += intensity
+            infoItems++
+        }
+        if (duration.isNotEmpty()) {
+            cardInfo += if(infoItems >= 1) {
+                "\n$duration"
+            } else {
+                duration
+            }
+            infoItems++
+        }
+        if (volume.isNotEmpty()) {
+            cardInfo += if (infoItems >= 1) {
+                "\n$volume"
+            } else {
+                volume
+            }
+        }
+
+        holder.checkBox.text = cardInfo
     }
 
     @SuppressLint("NotifyDataSetChanged")

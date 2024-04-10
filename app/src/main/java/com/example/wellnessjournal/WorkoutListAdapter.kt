@@ -24,6 +24,7 @@ class WorkoutListAdapter: RecyclerView.Adapter<WorkoutListAdapter.ViewHolder>() 
     // Setup ViewHolder(s) (view items used in each list item)
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.list_item_txt)
+        val textViewTitle: TextView = view.findViewById(R.id.list_item_text_title)
         val imageView: ImageView = view.findViewById(R.id.list_item_img)
     }
 
@@ -41,13 +42,19 @@ class WorkoutListAdapter: RecyclerView.Adapter<WorkoutListAdapter.ViewHolder>() 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         val workoutItem = workouts[position]
+
+        // Setup list item text
         viewHolder.textView.text = workoutItem.workoutName.toString()
+        viewHolder.textViewTitle.visibility = View.GONE
+
+        // Setup list item image
         viewHolder.imageView.setImageResource(R.drawable.play_icon)
+        viewHolder.imageView.visibility = View.VISIBLE
         viewHolder.imageView.layoutParams.height = 150
         viewHolder.imageView.layoutParams.width = 150
 
+        // Listen for navigation from Workouts to UpdateWorkout, to pass the selected workout data
         if (workouts.isNotEmpty()) {
-            // Listen for navigation from Workouts to UpdateWorkout, to pass the selected workout data
             viewHolder.itemView.findViewById<ConstraintLayout>(R.id.list_item_constraintlayout).setOnClickListener {
                 val action = WorkoutsFragmentDirections.actionNavigationWorkoutsToNavigationUpdateWorkouts(workoutItem)
                 viewHolder.itemView.findNavController().navigate(action)

@@ -29,6 +29,7 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.list_item_txt)
+        val title: TextView = view.findViewById(R.id.list_item_text_title)
         val imageView: ImageView = view.findViewById(R.id.list_item_img)
 
     }
@@ -53,11 +54,11 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val logItem = workoutLogs[position]
+        holder.title.text = logItem.workoutLogDate
 
         if (workouts.isNotEmpty() && position < workouts.size) {
             val logItemWorkout = workouts[position]
-            val itemText = logItem.workoutLogDate + ": " + logItemWorkout.workoutName
-            holder.textView.text = itemText
+            holder.textView.text = logItemWorkout.workoutName
             holder.imageView.setImageResource(R.drawable.checkmark_icon)
         }
 
