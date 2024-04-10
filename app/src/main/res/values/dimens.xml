@@ -22,4 +22,7 @@
     <!-- elevation -->
     <dimen name="card_elevation">4dp</dimen>
     <dimen name="weekday_margin">24dp</dimen>
+
+    <!-- input dimensions -->
+    <dimen name="input_horizontal_margin">48dp</dimen>
 </resources>

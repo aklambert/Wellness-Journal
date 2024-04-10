@@ -61,6 +61,9 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
             holder.textView.text = logItemWorkout.workoutName
             holder.imageView.setImageResource(R.drawable.checkmark_icon)
         }
+        else {
+            holder.textView.text = "Deleted workout"
+        }
 
         // Listen for user seeing details for specific workout log
         if (workoutLogs.isNotEmpty()) {

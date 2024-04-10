@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_color_variant3"
     tools:context=".ui.fitness.exercises.UpdateExerciseFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,13 +41,13 @@
         <EditText
             android:id="@+id/input_exercise_name"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/min_height"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Name"
             android:backgroundTint="@color/primary_color"
             android:gravity="center"
             android:hint="@string/exercise_name"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,19 +66,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_exercise_name"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/text_margin"/>
+            android:layout_margin="@dimen/input_horizontal_margin"/>
 
         <Spinner
             android:id="@+id/input_exercise_type"
             android:layout_width="match_parent"
             android:layout_height="@dimen/min_height"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Type"
             android:gravity="center"
-            android:backgroundTint="@color/primary_color"
             android:hint="@string/exercise_type"
             android:entries="@array/exercise_types_stringarray"
-            android:textColorHint="@color/hint_color"
+            android:background="@color/primary_color_variant2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,17 +95,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/input_horizontal_margin"
             />
 
         <EditText
             android:id="@+id/input_exercise_intensity"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/min_height"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Intensity"
             android:gravity="center"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:backgroundTint="@color/primary_color"
             android:hint="@string/exercise_intensity"
             android:textColorHint="@color/hint_color"
@@ -126,17 +126,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/input_horizontal_margin"
             />
 
         <EditText
             android:id="@+id/input_exercise_time"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/min_height"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Time/ Duration"
             android:gravity="center"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:backgroundTint="@color/primary_color"
             android:hint="@string/exercise_time"
             android:textColorHint="@color/hint_color"
@@ -157,17 +157,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/input_horizontal_margin"
             />
 
         <EditText
             android:id="@+id/input_exercise_volume"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/min_height"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Volume"
             android:gravity="center"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:backgroundTint="@color/primary_color"
             android:hint="@string/exercise_volume"
             android:textColorHint="@color/hint_color"
@@ -188,19 +188,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_margin="@dimen/input_horizontal_margin"
             />
 
         <EditText
             android:id="@+id/input_exercise_note"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Notes"
             android:backgroundTint="@color/primary_color"
             android:gravity="center"
             android:hint="@string/exercise_notes"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

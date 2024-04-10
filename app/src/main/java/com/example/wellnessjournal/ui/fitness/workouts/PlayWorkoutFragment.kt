@@ -53,7 +53,9 @@ class PlayWorkoutFragment : Fragment() {
                     // Get exercises associated with this workout, and show it in the recyclerview
                     val exercises = playWorkoutVM.getExerciseById(build.exerciseId)
                     exercises.observe(viewLifecycleOwner, Observer { exercise ->
-                        customAdapter.addExerciseToList(exercise)
+                        if (exercise !== null) {
+                            customAdapter.addExerciseToList(exercise)
+                        }
                    })
                 }
             }

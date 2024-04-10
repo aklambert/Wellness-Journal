@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:background="@color/primary_color_variant3">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/text_margin"
+        android:layout_margin="@dimen/text_margin"
+        android:background="@color/white"
         >
 
         <TextView
@@ -29,19 +31,19 @@
 
         <TextView
             android:id="@+id/text_Sunday"
+            style="@style/style_header3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/weekday_margin"
             android:layout_marginEnd="152dp"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintHorizontal_bias="0"
             android:gravity="center"
             android:text="@string/sunday"
-            style="@style/style_header3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_msg" />
+            app:layout_constraintTop_toBottomOf="@+id/text_msg"
+            app:layout_constraintVertical_bias="0" />
 
         <ImageView
             android:id="@+id/sunday_checkmark"
@@ -49,7 +51,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/green_checkmark"
             android:src="@drawable/log_success_icon"
-            android:layout_marginTop="16dp"
+
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

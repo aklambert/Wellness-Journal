@@ -80,6 +80,8 @@
     <string name="journal_image">journal image</string>
     <string name="title_timer_colon">Timer:</string>
     <string name="timer_finished">Timer Finished!</string>
+    <string name="workout_notes_title">Workout Notes</string>
+    <string name="dash">-</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">
