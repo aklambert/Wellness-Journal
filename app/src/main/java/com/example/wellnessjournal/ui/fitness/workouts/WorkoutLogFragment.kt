@@ -48,7 +48,9 @@ class WorkoutLogFragment : Fragment() {
                     // Get workout for this workoutlog
                     val workoutItem = workoutLogVM.getWorkoutById(log.workoutId)
                     workoutItem.observe(viewLifecycleOwner, Observer { workout ->
-                        customAdapter.workoutForLog(workout)
+                        if (workout !== null) {
+                            customAdapter.workoutForLog(workout)
+                        }
                     })
                 }
             }

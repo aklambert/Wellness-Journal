@@ -38,8 +38,13 @@ class WorkoutLogDetailsFragment : Fragment() {
         // Get workout to show details
         val workoutLiveData = workoutLogVM.getWorkoutById(selectedWorkoutLog.selectedWorkoutLog.workoutId)
         workoutLiveData.observe(viewLifecycleOwner, Observer { workout ->
-            val workoutNameText = "Workout: " + workout.workoutName
-            root.findViewById<TextView>(R.id.workout_name). text = workoutNameText
+            if (workout !== null) {
+                val workoutNameText = "Workout: " + workout.workoutName
+                root.findViewById<TextView>(R.id.workout_name).text = workoutNameText
+            }
+            else {
+                root.findViewById<TextView>(R.id.workout_name).text = "Deleted workout"
+            }
         })
 
         // Listen for when someone deletes the workout log
