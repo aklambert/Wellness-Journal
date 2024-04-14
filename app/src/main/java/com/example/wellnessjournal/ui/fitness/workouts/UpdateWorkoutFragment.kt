@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ScrollView
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -97,10 +99,14 @@ private var _binding: FragmentUpdateWorkoutBinding? = null
 
                 // Delete this workout
                 updateWorkoutVM.deleteWorkoutWithId(savedWorkout.selectedWorkout.workoutId)
+                // Go back to workout list page
+                findNavController().navigate(R.id.navigation_workouts)
             }
-
-            // Go back to workout list page
-            findNavController().navigate(R.id.navigation_workouts)
+            else {
+                // Workout cannot be deleted, so show user a message to communicate that
+                root.findViewById<TextView>(R.id.banner_msg).visibility = View.VISIBLE
+                root.findViewById<ScrollView>(R.id.update_workout_scrollview).fullScroll(ScrollView.FOCUS_UP);
+            }
         }
         return root
     }
