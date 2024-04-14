@@ -6,14 +6,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fitness.workouts.WorkoutLogFragment">
 
+    <TextView
+        android:id="@+id/workout_logs_title"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_workout_logs"
+        style="@style/style_header2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/workout_log_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/list_item"
-        android:layout_marginBottom="@dimen/bottom_margin"
+        android:paddingBottom="@dimen/text_margin"
         app:layout_constraintVertical_bias="0"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/workout_logs_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

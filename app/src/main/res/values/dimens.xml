@@ -10,6 +10,8 @@
     <!-- bottom margins -->
     <dimen name="bottom_margin">88dp</dimen>
     <dimen name="floating_btn_bottom_margin">72dp</dimen>
+    <dimen name="recyclerview_bottom_margin">8dp</dimen>
+    <dimen name="constraint_layout_bottom_margin">50dp</dimen>
 
     <!-- Top margins -->
     <dimen name="margin_between_save_and_delete_btns">56dp</dimen>

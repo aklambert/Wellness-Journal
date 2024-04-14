@@ -12,10 +12,24 @@
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/play_workout_title"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_play_workout"
+            style="@style/style_header2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            />
+
+        <TextView
             android:id="@+id/name_workout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/play_workout_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +37,7 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginHorizontal="@dimen/text_margin"
             android:gravity="center"
-            style="@style/style_header2"
+            style="@style/style_header3Bold"
             />
 
         <androidx.recyclerview.widget.RecyclerView

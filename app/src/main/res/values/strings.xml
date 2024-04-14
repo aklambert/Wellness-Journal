@@ -82,6 +82,15 @@
     <string name="timer_finished">Timer Finished!</string>
     <string name="workout_notes_title">Workout Notes</string>
     <string name="dash">-</string>
+    <string name="title_add_exercise">Add Exercise</string>
+    <string name="title_update_exercise">Update Exercise</string>
+    <string name="title_add_workout">Add Workout</string>
+    <string name="title_update_workout">Update Workout</string>
+    <string name="title_play_workout">Complete Workout</string>
+    <string name="title_add_reflection_journal">Add Journal Entry</string>
+    <string name="title_update_reflection_journal">Update Journal Entry</string>
+    <string name="title_add_goal">Add Goal</string>
+    <string name="title_update_goal">Update Goal</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">

@@ -63,7 +63,7 @@
     <fragment
         android:id="@+id/navigation_exercises"
         android:name="com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragment"
-        android:label="@string/title_exercises"
+        android:label=""
         tools:layout="@layout/fragment_exercises"
         >
         <action
@@ -80,7 +80,7 @@
     <fragment
         android:id="@+id/navigation_add_exercise"
         android:name="com.example.wellnessjournal.ui.fitness.exercises.AddExerciseFragment"
-        android:label="Add Exercise"
+        android:label=""
         tools:layout="@layout/fragment_add_exercise">
         <action
             android:id="@+id/action_navigation_add_exercise_to_navigation_exercises"
@@ -90,7 +90,7 @@
     <fragment
         android:id="@+id/navigation_update_exercise"
         android:name="com.example.wellnessjournal.ui.fitness.exercises.UpdateExerciseFragment"
-        android:label="Update Exercise"
+        android:label=""
         tools:layout="@layout/fragment_update_exercise">
         <action
             android:id="@+id/action_navigation_update_exercise_to_navigation_exercises"
@@ -103,7 +103,7 @@
     <fragment
         android:id="@+id/navigation_workouts"
         android:name="com.example.wellnessjournal.ui.fitness.workouts.WorkoutsFragment"
-        android:label="Workouts"
+        android:label=""
         tools:layout="@layout/fragment_workouts">
 
         <action
@@ -123,7 +123,7 @@
     <fragment
         android:id="@+id/navigation_add_workout"
         android:name="com.example.wellnessjournal.ui.fitness.workouts.AddWorkoutFragment"
-        android:label="Add Workout"
+        android:label=""
         tools:layout="@layout/fragment_add_workout"
         >
         <action
@@ -134,7 +134,7 @@
     <fragment
         android:id="@+id/navigation_update_workouts"
         android:name="com.example.wellnessjournal.ui.fitness.workouts.UpdateWorkoutFragment"
-        android:label="Update Workout"
+        android:label=""
         tools:layout="@layout/fragment_update_workout">
         <action
             android:id="@+id/action_navigation_update_workouts_to_navigation_workouts"
@@ -147,7 +147,7 @@
     <fragment
         android:id="@+id/navigation_journal"
         android:name="com.example.wellnessjournal.ui.journal.reflectionJournal.JournalFragment"
-        android:label="Reflection Journal"
+        android:label=""
         tools:layout="@layout/fragment_journal">
         <action
             android:id="@+id/action_navigation_journal_to_navigation_add_reflection_journal"
@@ -162,7 +162,7 @@
     <fragment
         android:id="@+id/navigation_add_reflection_journal"
         android:name="com.example.wellnessjournal.ui.journal.reflectionJournal.AddReflectionJournalFragment"
-        android:label="Add Reflection Journal"
+        android:label=""
         tools:layout="@layout/fragment_add_reflection_journal">
 
     </fragment>
@@ -170,7 +170,7 @@
     <fragment
         android:id="@+id/navigation_update_reflection_journal"
         android:name="com.example.wellnessjournal.ui.journal.reflectionJournal.UpdateReflectionJournalFragment"
-        android:label="Update Reflection Journal"
+        android:label=""
         tools:layout="@layout/fragment_update_reflection_journal">
 
         <argument
@@ -195,7 +195,7 @@
     <fragment
         android:id="@+id/navigation_play_workout"
         android:name="com.example.wellnessjournal.ui.fitness.workouts.PlayWorkoutFragment"
-        android:label="Complete Workout"
+        android:label=""
         tools:layout="@layout/fragment_play_workout">
 
         <action
@@ -209,7 +209,7 @@
     <fragment
         android:id="@+id/navigation_workout_logs"
         android:name="com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogFragment"
-        android:label="Workout Logs"
+        android:label=""
         tools:layout="@layout/fragment_workout_log">
         <action
             android:id="@+id/action_navigation_workout_logs_to_navigation_fitness"
@@ -235,7 +235,7 @@
     <fragment
         android:id="@+id/navigation_goals"
         android:name="com.example.wellnessjournal.ui.journal.goals.GoalsFragment"
-        android:label="Goals"
+        android:label=""
         tools:layout="@layout/fragment_goals">
 
         <action
@@ -252,7 +252,7 @@
     <fragment
         android:id="@+id/navigation_add_goal"
         android:name="com.example.wellnessjournal.ui.journal.goals.AddGoalFragment"
-        android:label="Add Goal"
+        android:label=""
         tools:layout="@layout/fragment_add_goal">
 
         <action
@@ -263,7 +263,7 @@
     <fragment
         android:id="@+id/navigation_update_goal"
         android:name="com.example.wellnessjournal.ui.journal.goals.UpdateGoalFragment"
-        android:label="Update Goal"
+        android:label=""
         tools:layout="@layout/fragment_update_goal">
 
         <action
