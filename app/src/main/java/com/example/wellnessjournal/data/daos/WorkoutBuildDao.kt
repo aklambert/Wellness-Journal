@@ -55,4 +55,10 @@ interface WorkoutBuildDao {
      */
     @Query("SELECT * FROM workoutBuild WHERE workoutId = :workoutId")
     fun getWorkoutBuildsForWorkout(workoutId: Int): LiveData<List<WorkoutBuild>>
+
+    /**
+     * Get list of Workout Builds that have a certain exercise
+     */
+    @Query("SELECT * FROM workoutBuild WHERE exerciseId = :exerciseId")
+    fun getWorkoutBuildsWithExercise(exerciseId: Int): LiveData<List<WorkoutBuild>>
 }

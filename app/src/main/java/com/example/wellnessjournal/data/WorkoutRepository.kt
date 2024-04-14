@@ -115,4 +115,11 @@ class WorkoutRepository( private val workoutDao: WorkoutDao,
     fun getWorkoutById(workoutId: Int): LiveData<Workout> {
         return workoutDao.getWorkoutById(workoutId)
     }
+
+    /**
+     * Get workout builds containing a certain exercise
+     */
+    fun getWorkoutBuildsWithExercise(exerciseId: Int): LiveData<List<WorkoutBuild>> {
+        return workoutBuildDao.getWorkoutBuildsWithExercise(exerciseId)
+    }
 }
