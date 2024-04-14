@@ -93,6 +93,8 @@
     <string name="title_update_goal">Update Goal</string>
     <string name="last_workout_msg">The last saved workout cannot be deleted</string>
     <string name="exercise_part_of_workout_msg">This exercise is part of a saved workout and cannot be deleted</string>
+    <string name="log_details">Log Details</string>
+    <string name="log_date">Log date</string>
 
     <!-- Exercise Types for spinner -->
     <string-array name="exercise_types_stringarray">
