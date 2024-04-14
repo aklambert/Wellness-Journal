@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -119,16 +120,24 @@ class UpdateExerciseFragment : Fragment() {
      * Delete exercise
      */
     private fun deleteExercise(viewModel: UpdateExerciseViewModel) {
-        // Get exercise to delete
+        // Cannot delete the exercise if it is in a saved workout
         val id = savedExercise.selectedExercise.exerciseId
-        val name = savedExercise.selectedExercise.exerciseName
-        val type = savedExercise.selectedExercise.exerciseTypeId
-        val intensity = savedExercise.selectedExercise.exerciseIntensity
-        val time = savedExercise.selectedExercise.exerciseTime
-        val volume = savedExercise.selectedExercise.exerciseVolume
-        val note = savedExercise.selectedExercise.exerciseNote
+        val workoutBuildsWithExercise = viewModel.getWorkoutBuildsWithExercise(id)
+        workoutBuildsWithExercise.observe(viewLifecycleOwner, Observer{ builds ->
+            if (builds != null && builds.isNotEmpty()) {
+                // Get rest of exercise information
+                val name = savedExercise.selectedExercise.exerciseName
+                val type = savedExercise.selectedExercise.exerciseTypeId
+                val intensity = savedExercise.selectedExercise.exerciseIntensity
+                val time = savedExercise.selectedExercise.exerciseTime
+                val volume = savedExercise.selectedExercise.exerciseVolume
+                val note = savedExercise.selectedExercise.exerciseNote
 
-        val exercise = Exercise(id, name, type, intensity, time, volume, note)
-        viewModel.deleteExercise(exercise)
+                val exercise = Exercise(id, name, type, intensity, time, volume, note)
+                viewModel.deleteExercise(exercise)
+            }
+        })
+
+
     }
 }

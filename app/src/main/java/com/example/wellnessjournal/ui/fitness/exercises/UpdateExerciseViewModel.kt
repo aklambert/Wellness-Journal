@@ -2,11 +2,14 @@ package com.example.wellnessjournal.ui.fitness.exercises
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.ExerciseRepository
 import com.example.wellnessjournal.data.WellnessJournalDatabase
+import com.example.wellnessjournal.data.WorkoutRepository
 import com.example.wellnessjournal.data.daos.ExerciseDao
 import com.example.wellnessjournal.data.entities.Exercise
+import com.example.wellnessjournal.data.entities.WorkoutBuild
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -15,18 +18,40 @@ class UpdateExerciseViewModel(application: Application) : AndroidViewModel(appli
     private val exerciseDao: ExerciseDao =
         WellnessJournalDatabase.getDatabase(application)?.ExerciseDao()!!
 
-    // Get repository for accessing dao methods
-    private val exerciseRepo: ExerciseRepository = ExerciseRepository(exerciseDao)
+    // Get Workout related Daos
+    private val workoutDao =
+        WellnessJournalDatabase.getDatabase(application)?.WorkoutDao()!!
+    private val workoutBuildDao =
+        WellnessJournalDatabase.getDatabase(application)?.WorkoutBuildDao()!!
+    private val workoutLogDao =
+        WellnessJournalDatabase.getDatabase(application)?.WorkoutLogDao()!!
 
+    // Get repositories for accessing dao methods
+    private val exerciseRepo: ExerciseRepository = ExerciseRepository(exerciseDao)
+    private val workoutRepo: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao, workoutLogDao)
+
+    /**
+     * Update existing exercise
+     */
     fun updateExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
             exerciseRepo.updateExercise(exercise)
         }
     }
 
+    /**
+     * Delete existing exercise
+     */
     fun deleteExercise(exercise: Exercise) {
         viewModelScope.launch(Dispatchers.IO) {
             exerciseRepo.deleteExercise(exercise)
         }
+    }
+
+    /**
+     * Get workout builds containing a certain exercise
+     */
+    fun getWorkoutBuildsWithExercise(exerciseId: Int): LiveData<List<WorkoutBuild>> {
+        return workoutRepo.getWorkoutBuildsWithExercise(exerciseId)
     }
 }
