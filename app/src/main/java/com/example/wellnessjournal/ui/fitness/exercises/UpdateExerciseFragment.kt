@@ -124,27 +124,26 @@ class UpdateExerciseFragment : Fragment() {
         // Cannot delete the exercise if it is in a saved workout
         val id = savedExercise.selectedExercise.exerciseId
         val workoutBuildsWithExercise = viewModel.getWorkoutBuildsWithExercise(id)
-        workoutBuildsWithExercise.observe(viewLifecycleOwner, Observer{ builds ->
-            if (builds != null) {
-                if (builds.isNotEmpty()) {
-                    // Get rest of exercise information
-                    val name = savedExercise.selectedExercise.exerciseName
-                    val type = savedExercise.selectedExercise.exerciseTypeId
-                    val intensity = savedExercise.selectedExercise.exerciseIntensity
-                    val time = savedExercise.selectedExercise.exerciseTime
-                    val volume = savedExercise.selectedExercise.exerciseVolume
-                    val note = savedExercise.selectedExercise.exerciseNote
 
-                    val exercise = Exercise(id, name, type, intensity, time, volume, note)
-                    viewModel.deleteExercise(exercise)
-                    findNavController().navigate(R.id.navigation_exercises)
-                }
-                else {
-                    // Exercise cannot be deleted, so show user a message to communicate that
-                    view.findViewById<TextView>(R.id.exercise_banner_msg).visibility = View.VISIBLE
-                    view.findViewById<ScrollView>(R.id.update_exercise_scrollview).fullScroll(
-                        ScrollView.FOCUS_UP);
-                }
+        workoutBuildsWithExercise.observe(viewLifecycleOwner, Observer{ builds ->
+            if (builds != null && builds.isNotEmpty()) {
+                // Exercise cannot be deleted, so show user a message to communicate that
+                view.findViewById<TextView>(R.id.exercise_banner_msg).visibility = View.VISIBLE
+                view.findViewById<ScrollView>(R.id.update_exercise_scrollview).fullScroll(
+                    ScrollView.FOCUS_UP);
+            }
+            else {
+                // Get rest of exercise information
+                val name = savedExercise.selectedExercise.exerciseName
+                val type = savedExercise.selectedExercise.exerciseTypeId
+                val intensity = savedExercise.selectedExercise.exerciseIntensity
+                val time = savedExercise.selectedExercise.exerciseTime
+                val volume = savedExercise.selectedExercise.exerciseVolume
+                val note = savedExercise.selectedExercise.exerciseNote
+
+                val exercise = Exercise(id, name, type, intensity, time, volume, note)
+                viewModel.deleteExercise(exercise)
+                findNavController().navigate(R.id.navigation_exercises)
             }
         })
 
