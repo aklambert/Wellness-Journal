@@ -49,4 +49,13 @@ class WorkoutLogViewModel(application: Application) : AndroidViewModel(applicati
             workoutRepository.deleteWorkoutLog(workoutLog)
         }
     }
+
+    /**
+     * Update a workout log
+     */
+    fun updateWorkoutLog(workoutLog: WorkoutLog) {
+        viewModelScope.launch(Dispatchers.IO){
+            workoutRepository.updateWorkoutLog(workoutLog)
+        }
+    }
 }
