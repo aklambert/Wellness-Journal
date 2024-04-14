@@ -5,20 +5,41 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary_color_variant3"
-    tools:context=".ui.fitness.exercises.UpdateExerciseFragment">
+    tools:context=".ui.fitness.exercises.UpdateExerciseFragment"
+    android:id="@+id/update_exercise_scrollview">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/exercise_banner_msg"
+            android:gravity="center"
+            android:textColor="#70662C"
+            android:elevation="@dimen/card_elevation"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0"
+            style="@style/style_header3"
+            android:layout_margin="@dimen/text_margin"
+            android:background="@color/info_color"
+            android:text="@string/exercise_part_of_workout_msg"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
             android:id="@+id/update_exercise_title"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
             android:text="@string/title_update_exercise"
             style="@style/style_header2"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exercise_banner_msg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

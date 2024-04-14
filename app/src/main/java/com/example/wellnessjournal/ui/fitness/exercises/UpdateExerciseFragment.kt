@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ScrollView
 import android.widget.Spinner
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -46,8 +48,7 @@ class UpdateExerciseFragment : Fragment() {
         val btnDelete: Button = root.findViewById(R.id.btn_delete_exercise)
         btnDelete.setOnClickListener {
             // Delete exercise
-            deleteExercise(updateExerciseVM)
-            findNavController().navigate(R.id.navigation_exercises)
+            deleteExercise(root, updateExerciseVM)
         }
 
         return root
@@ -119,22 +120,31 @@ class UpdateExerciseFragment : Fragment() {
     /**
      * Delete exercise
      */
-    private fun deleteExercise(viewModel: UpdateExerciseViewModel) {
+    private fun deleteExercise(view: View, viewModel: UpdateExerciseViewModel) {
         // Cannot delete the exercise if it is in a saved workout
         val id = savedExercise.selectedExercise.exerciseId
         val workoutBuildsWithExercise = viewModel.getWorkoutBuildsWithExercise(id)
         workoutBuildsWithExercise.observe(viewLifecycleOwner, Observer{ builds ->
-            if (builds != null && builds.isNotEmpty()) {
-                // Get rest of exercise information
-                val name = savedExercise.selectedExercise.exerciseName
-                val type = savedExercise.selectedExercise.exerciseTypeId
-                val intensity = savedExercise.selectedExercise.exerciseIntensity
-                val time = savedExercise.selectedExercise.exerciseTime
-                val volume = savedExercise.selectedExercise.exerciseVolume
-                val note = savedExercise.selectedExercise.exerciseNote
+            if (builds != null) {
+                if (builds.isNotEmpty()) {
+                    // Get rest of exercise information
+                    val name = savedExercise.selectedExercise.exerciseName
+                    val type = savedExercise.selectedExercise.exerciseTypeId
+                    val intensity = savedExercise.selectedExercise.exerciseIntensity
+                    val time = savedExercise.selectedExercise.exerciseTime
+                    val volume = savedExercise.selectedExercise.exerciseVolume
+                    val note = savedExercise.selectedExercise.exerciseNote
 
-                val exercise = Exercise(id, name, type, intensity, time, volume, note)
-                viewModel.deleteExercise(exercise)
+                    val exercise = Exercise(id, name, type, intensity, time, volume, note)
+                    viewModel.deleteExercise(exercise)
+                    findNavController().navigate(R.id.navigation_exercises)
+                }
+                else {
+                    // Exercise cannot be deleted, so show user a message to communicate that
+                    view.findViewById<TextView>(R.id.exercise_banner_msg).visibility = View.VISIBLE
+                    view.findViewById<ScrollView>(R.id.update_exercise_scrollview).fullScroll(
+                        ScrollView.FOCUS_UP);
+                }
             }
         })
 

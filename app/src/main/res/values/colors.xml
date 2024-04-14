@@ -18,4 +18,5 @@
     <color name="medium_green">#18A558</color>
     <color name="danger">#CA112C</color>
     <color name="hint_color">#495AB6</color>
+    <color name="info_color">#E5DFBD</color>
 </resources>
