@@ -12,6 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center">
 
+        <TextView
+            android:id="@+id/update_reflection_journal_title"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/title_update_reflection_journal"
+            style="@style/style_header3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            />
+
         <EditText
             android:id="@+id/input_reflection_journal_entry"
             android:layout_width="match_parent"
@@ -25,7 +40,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/update_reflection_journal_title"
             app:layout_constraintVertical_bias="0" />
 
 
