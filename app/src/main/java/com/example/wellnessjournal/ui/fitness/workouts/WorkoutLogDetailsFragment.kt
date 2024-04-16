@@ -56,15 +56,6 @@ class WorkoutLogDetailsFragment : Fragment() {
             findNavController().navigate(R.id.navigation_workout_logs)
         }
 
-        // Listen for when someone saves a workout log date edit
-        val saveBtn: Button = root.findViewById(R.id.btn_update_workoutlog_date)
-        saveBtn.setOnClickListener {
-            val newDate = logDay.text.toString()
-            val log = WorkoutLog(selectedWorkoutLog.selectedWorkoutLog.workoutLogId, selectedWorkoutLog.selectedWorkoutLog.workoutId, newDate)
-            workoutLogVM.updateWorkoutLog(log)
-            findNavController().navigate(R.id.navigation_workout_logs)
-        }
-
 
         return root
     }
