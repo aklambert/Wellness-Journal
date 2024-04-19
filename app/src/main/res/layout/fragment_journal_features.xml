@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color_variant3"
     android:fillViewport="true"
+    android:paddingBottom="@dimen/bottom_margin"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
