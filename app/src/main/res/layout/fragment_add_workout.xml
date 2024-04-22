@@ -52,6 +52,7 @@
             android:gravity="center"
             android:hint="@string/workout_name"
             android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,17 +91,17 @@
 
         <TextView
             android:id="@+id/tv_exercise_note"
+            style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
-            android:text="@string/notes"
-            style="@style/style_header3"
-            app:layout_constraintTop_toBottomOf="@+id/exercises_for_workout_recyclerView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0"
             android:layout_margin="@dimen/text_margin"
-            />
+            android:text="@string/notes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exercises_for_workout_recyclerView"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="TextSizeCheck" />
 
         <EditText
             android:id="@+id/input_workout_note"
@@ -112,6 +113,7 @@
             android:gravity="center"
             android:hint="@string/workout_notes"
             android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

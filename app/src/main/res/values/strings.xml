@@ -33,6 +33,9 @@
     <string name="enter_seconds">00</string>
     <string name="title_timer_colon">Timer:</string>
     <string name="timer_finished">Timer Finished!</string>
+    <string name="hours_no_colon">Hours</string>
+    <string name="minutes_no_colon">Minutes</string>
+    <string name="seconds_no_colon">Seconds</string>
 
     <!-- Exercise related -->
     <string name="item_text">List item</string>
@@ -47,10 +50,11 @@
     <string name="save">Save</string>
     <string name="exercise_name">Exercise Name</string>
     <string name="exercise_type">Exercise Type</string>
-    <string name="exercise_intensity">Exercise Intensity</string>
-    <string name="exercise_volume">Exercise Volume</string>
+    <string name="exercise_intensity">e.g. RPE 4, 15 lbs, 65% HRmax, etc.</string>
+    <string name="exercise_volume">e.g. 2 sets 10 reps, etc.</string>
     <string name="exercise_notes">Exercise Notes</string>
-    <string name="exercise_time">Exercise Time/Duration</string>
+    <string name="exercise_time">e.g. 30 min, 30 s, etc.</string>
+    <string name="exercise_time_prompt">Exercise Time/ Duration</string>
     <string name="save_changes">Save Changes</string>
     <string name="title_add_exercise">Add Exercise</string>
     <string name="title_update_exercise">Update Exercise</string>
