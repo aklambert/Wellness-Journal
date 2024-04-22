@@ -10,6 +10,9 @@ import com.example.wellnessjournal.data.entities.Exercise
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for Methods/Variables Pertaining to Adding Exercises
+ */
 class AddExerciseViewModel(application: Application) : AndroidViewModel(application) {
 
     // Get Exercise Dao to access Exercise Table in database
@@ -23,6 +26,7 @@ class AddExerciseViewModel(application: Application) : AndroidViewModel(applicat
      * Create a new exercise
      */
     fun createExercise(exercise: Exercise) {
+        // Access database in a different thread (not the main one)
         viewModelScope.launch(Dispatchers.IO) {
             exerciseRepo.createExercise(exercise)
         }

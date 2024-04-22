@@ -1,6 +1,5 @@
 package com.example.wellnessjournal.ui.journal.goals
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -17,6 +15,9 @@ import com.example.wellnessjournal.data.entities.Goal
 import com.example.wellnessjournal.databinding.FragmentUpdateGoalBinding
 import java.time.LocalDate
 
+/**
+ * Fragment for updating goal information and saving it to the WellnessJournal database
+ */
 class UpdateGoalFragment : Fragment() {
     private var _binding: FragmentUpdateGoalBinding? = null
     private val binding get() = _binding!!

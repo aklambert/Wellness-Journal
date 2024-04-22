@@ -4,26 +4,29 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.CheckBox
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Exercise
-import com.example.wellnessjournal.ui.fitness.workouts.AddWorkoutFragmentDirections
 
 /**
- * Define custom adapter for RecyclerView for listing data items
+ * Define custom adapter for RecyclerView for listing exercise data items
  */
 class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdapter.ViewHolder>() {
+    /* Adapter lists of saved exercises to choose from (exerciseChoices), and exercises selected to
+       save to a workout (selectedExercises)*/
     private var exerciseChoices = listOf<Exercise>()
     private var selectedExercises = listOf<Exercise>()
 
-    // Setup ViewHolder(s) (view items used in each list item)
+    /**
+     *  Setup ViewHolder(s) (view items used in each list item such as TextViews, CheckBoxes, etc.)
+     */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val checkBox: CheckBox = view.findViewById(R.id.exercise_checkBox)
     }
 
-    // Create new views for list items with the layout manager
+    /**
+     *  Create new views for list items with the layout manager
+     */
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
@@ -32,7 +35,9 @@ class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdap
         return ViewHolder(view)
     }
 
-    // Replace the contents of the new list item with data
+    /**
+     * Replace the contents of the new list item with saved data
+     */
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
@@ -49,24 +54,25 @@ class ExerciseCheckboxListAdapter: RecyclerView.Adapter<ExerciseCheckboxListAdap
         }
     }
 
-    // Set data to use and display, and notify data was changed
+    /**
+     *  Set data to use and display, and notify data was changed
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun data(exercise: List<Exercise>) {
         this.exerciseChoices = exercise
         notifyDataSetChanged()
     }
 
-    // Get list size
+    /**
+     * Get list size of exerciseChoices
+     */
     override fun getItemCount(): Int {
         return exerciseChoices.size
     }
 
-    // Get size of selected items
-    fun getSelectedCount(): Int {
-        return selectedExercises.size
-    }
-
-    // Get list of selected items
+    /**
+     * Get list of selected items
+     */
     fun getSelectedItems(): List<Exercise> {
         return selectedExercises
     }

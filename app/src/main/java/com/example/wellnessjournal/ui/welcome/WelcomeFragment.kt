@@ -7,14 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentWelcomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
+/**
+ * Fragment for entering exercise information and saving an exercise to the WellnessJournal database
+ */
 class WelcomeFragment : Fragment() {
 
     private var _binding: FragmentWelcomeBinding? = null

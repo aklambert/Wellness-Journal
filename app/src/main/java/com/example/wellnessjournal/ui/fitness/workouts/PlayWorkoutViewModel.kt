@@ -1,11 +1,8 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
 import android.app.Application
-import androidx.compose.foundation.text.selection.DisableSelection
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.ExerciseRepository
 import com.example.wellnessjournal.data.WellnessJournalDatabase
@@ -20,8 +17,12 @@ import com.example.wellnessjournal.data.entities.WorkoutLog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+
+/**
+ * ViewModel for Methods/Variables Pertaining to Completing/ Logging a Workout
+ */
 class PlayWorkoutViewModel(application: Application) : AndroidViewModel(application) {
-    // Get related Daos
+    // Get exercise and workout related Daos
     private val workoutBuildDao: WorkoutBuildDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutBuildDao()!!
     private val workoutDao: WorkoutDao =
@@ -31,7 +32,7 @@ class PlayWorkoutViewModel(application: Application) : AndroidViewModel(applicat
     private val workoutLogDao: WorkoutLogDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutLogDao()!!
 
-    // Get repositories
+    // Get exercise and workout repositories
     private val workoutRepository: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao,
         workoutLogDao)
     private val exerciseRepository: ExerciseRepository = ExerciseRepository(exerciseDao)
@@ -54,6 +55,7 @@ class PlayWorkoutViewModel(application: Application) : AndroidViewModel(applicat
      * Create a workout log
      */
     fun logWorkout(workoutLog: WorkoutLog) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO){
             workoutRepository.addWorkoutLog(workoutLog)
         }

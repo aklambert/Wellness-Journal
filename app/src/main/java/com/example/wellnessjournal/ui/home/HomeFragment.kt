@@ -1,25 +1,22 @@
 package com.example.wellnessjournal.ui.home
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentHomeBinding
 import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogViewModel
-import java.time.DayOfWeek
 import java.time.LocalDate
-import java.time.temporal.WeekFields
 import java.util.Calendar
-import kotlin.time.Duration.Companion.days
 
+/**
+ * Home fragment, where data reflecting workout logs is displayed
+ */
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -38,15 +35,6 @@ class HomeFragment : Fragment() {
         // ViewModel Setup
         val workoutLogVM: WorkoutLogViewModel = ViewModelProvider(this)[WorkoutLogViewModel::class.java]
 
-        // Get checkmark image views
-        val sundayCheck: ImageView = root.findViewById(R.id.sunday_checkmark)
-        val mondayCheck: ImageView = root.findViewById(R.id.monday_checkmark)
-        val tuesCheck: ImageView = root.findViewById(R.id.tuesday_checkmark)
-        val wednesdayCheck: ImageView = root.findViewById(R.id.wednesday_checkmark)
-        val thursdayCheck: ImageView = root.findViewById(R.id.thursday_checkmark)
-        val fridayCheck: ImageView = root.findViewById(R.id.friday_checkmark)
-        val saturdayCheck: ImageView = root.findViewById(R.id.saturday_checkmark)
-
         // Get dates for this week
         val thisWeek = getDatesThisWeek()
         val sunday = thisWeek?.get(0)
@@ -57,6 +45,7 @@ class HomeFragment : Fragment() {
             // Reset the checkmarks showing
             resetCheckMarks(root)
 
+            // Show checkmarks next to days with completed workouts
             if (workoutLogs.isNotEmpty()) {
                 for (log in workoutLogs) {
 
@@ -154,24 +143,28 @@ class HomeFragment : Fragment() {
             Calendar.SUNDAY -> {
                 sunday = LocalDate.now()
                 saturday = LocalDate.now().plusDays(6)
-
             }
+
             Calendar.MONDAY -> {
                 sunday = LocalDate.now().minusDays(1)
                 saturday = LocalDate.now().plusDays(5)
             }
+
             Calendar.TUESDAY -> {
                 sunday = LocalDate.now().minusDays(2)
                 saturday = LocalDate.now().plusDays(4)
             }
+
             Calendar.WEDNESDAY -> {
                 sunday = LocalDate.now().minusDays(3)
                 saturday = LocalDate.now().plusDays(3)
             }
+
             Calendar.THURSDAY -> {
                 sunday = LocalDate.now().minusDays(4)
                 saturday = LocalDate.now().plusDays(2)
             }
+
             Calendar.FRIDAY -> {
                 sunday = LocalDate.now().minusDays(5)
                 saturday = LocalDate.now().plusDays(1)
@@ -181,6 +174,7 @@ class HomeFragment : Fragment() {
                 sunday = LocalDate.now().minusDays(6)
                 saturday = LocalDate.now()
             }
+
             else -> {
                 return null
             }

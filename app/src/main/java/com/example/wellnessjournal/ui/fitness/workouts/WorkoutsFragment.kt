@@ -4,11 +4,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.R
@@ -16,6 +14,9 @@ import com.example.wellnessjournal.WorkoutListAdapter
 import com.example.wellnessjournal.databinding.FragmentWorkoutsBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * Fragment for Showing Saved Workouts
+ */
 class WorkoutsFragment : Fragment() {
 
     private var _binding: FragmentWorkoutsBinding? = null

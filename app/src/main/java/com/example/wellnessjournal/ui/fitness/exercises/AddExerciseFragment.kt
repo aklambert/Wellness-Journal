@@ -14,6 +14,9 @@ import com.example.wellnessjournal.R
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.databinding.FragmentAddExerciseBinding
 
+/**
+ * Fragment for entering exercise information and saving an exercise to the WellnessJournal database
+*/
 class AddExerciseFragment : Fragment() {
     private var _binding: FragmentAddExerciseBinding? = null
 

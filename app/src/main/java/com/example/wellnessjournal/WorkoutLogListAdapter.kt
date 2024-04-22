@@ -7,25 +7,22 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.ViewModelStoreOwner
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutLog
 import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogFragmentDirections
-import com.example.wellnessjournal.ui.fitness.workouts.WorkoutLogViewModel
 
 /**
- * Custom adapter for list of workout logs
+ * Define custom adapter for RecyclerView for listing workout logs
  */
 class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHolder>() {
+    // Lists for saved workout logs, and workouts saved in logs
     private var workoutLogs = listOf<WorkoutLog>()
     private var workouts = listOf<Workout>()
 
     /**
-     * ViewHolder setup
+     *  Setup ViewHolder(s) (view items used in each list item such as TextViews, CheckBoxes, etc.)
      */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.list_item_txt)
@@ -35,7 +32,7 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
     }
 
     /**
-     * Create new view for list items
+     *  Create new views for list items with the layout manager
      */
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.list_item, viewGroup, false)
@@ -75,7 +72,7 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
     }
 
     /**
-     * Set workout log data
+     * Set workout log data and notify the data was changed
      */
     @SuppressLint("NotifyDataSetChanged")
     fun data(workout: List<WorkoutLog>) {

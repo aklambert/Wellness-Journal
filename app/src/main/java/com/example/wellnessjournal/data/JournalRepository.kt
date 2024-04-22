@@ -3,17 +3,17 @@ package com.example.wellnessjournal.data
 import androidx.lifecycle.LiveData
 import com.example.wellnessjournal.data.daos.GoalDao
 import com.example.wellnessjournal.data.daos.ReflectionJournalDao
-import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Goal
 import com.example.wellnessjournal.data.entities.ReflectionJournal
 
+/**
+ * Repository for methods accessing Dao methods for the Journal Related Entities
+ */
 class JournalRepository(private val reflectionJournalDao: ReflectionJournalDao,
-    private val goalDao: GoalDao
-) {
-    // List of all currently saved reflection journals
-    val listReflectionJournals: LiveData<List<ReflectionJournal>> = reflectionJournalDao.getReflectionJournals()
+    private val goalDao: GoalDao) {
 
-    // List of all currently saved goals
+    // List of all currently saved reflection journals and goals
+    val listReflectionJournals: LiveData<List<ReflectionJournal>> = reflectionJournalDao.getReflectionJournals()
     val listGoals: LiveData<List<Goal>> = goalDao.getGoals()
 
     /**

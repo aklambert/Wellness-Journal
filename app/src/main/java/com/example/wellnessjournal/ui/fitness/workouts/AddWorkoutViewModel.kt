@@ -9,13 +9,14 @@ import com.example.wellnessjournal.data.WorkoutRepository
 import com.example.wellnessjournal.data.daos.WorkoutBuildDao
 import com.example.wellnessjournal.data.daos.WorkoutDao
 import com.example.wellnessjournal.data.daos.WorkoutLogDao
-import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
-import com.example.wellnessjournal.data.entityrelations.WorkoutWithWorkoutBuild
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for Methods/Variables Pertaining to Adding Workouts
+ */
 class AddWorkoutViewModel(application: Application) : AndroidViewModel(application) {
     // Get Workout Daos to save exercise into a new workout
     private val workoutBuildDao: WorkoutBuildDao =
@@ -37,6 +38,7 @@ class AddWorkoutViewModel(application: Application) : AndroidViewModel(applicati
      * Create a new workout
      */
     fun saveWorkout(workout: Workout) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO){
            workoutRepository.createWorkout(workout)
         }
@@ -46,9 +48,9 @@ class AddWorkoutViewModel(application: Application) : AndroidViewModel(applicati
      * Save a new workout build
      */
     fun buildWorkout(workoutBuild: WorkoutBuild) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO) {
             workoutRepository.createWorkoutBuild(workoutBuild)
         }
     }
-
 }

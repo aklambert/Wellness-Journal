@@ -15,6 +15,9 @@ import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentExercisesBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * Fragment for Showing All Saved Exercises
+ */
 class ExercisesFragment : Fragment() {
 
     private var _binding: FragmentExercisesBinding? = null

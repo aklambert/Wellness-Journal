@@ -17,6 +17,10 @@ import com.example.wellnessjournal.R
 import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.databinding.FragmentUpdateExerciseBinding
 
+/**
+ * Fragment for entering updating information for a selected exercise
+ *  and saving it to the WellnessJournal database
+ */
 class UpdateExerciseFragment : Fragment() {
     private var _binding: FragmentUpdateExerciseBinding? = null
     private val savedExercise by navArgs<UpdateExerciseFragmentArgs>()
@@ -146,7 +150,5 @@ class UpdateExerciseFragment : Fragment() {
                 findNavController().navigate(R.id.navigation_exercises)
             }
         })
-
-
     }
 }

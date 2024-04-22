@@ -1,11 +1,8 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
 import android.app.Application
-import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.data.WorkoutRepository
@@ -17,6 +14,9 @@ import com.example.wellnessjournal.data.entities.WorkoutBuild
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for Methods/Variables Pertaining to Updating Workouts
+ */
 class UpdateWorkoutViewModel(application: Application) : AndroidViewModel(application) {
     // Get Workout Daos
     private val workoutBuildDao: WorkoutBuildDao =
@@ -25,15 +25,19 @@ class UpdateWorkoutViewModel(application: Application) : AndroidViewModel(applic
         WellnessJournalDatabase.getDatabase(application)?.WorkoutDao()!!
     private val workoutLogDao: WorkoutLogDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutLogDao()!!
+
     // Get workout repository
     private val workoutRepository: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao,
         workoutLogDao)
+
+    // List of all saved workout builds
     val listOfWorkoutBuilds: LiveData<List<WorkoutBuild>> = workoutRepository.listWorkoutBuilds
 
     /**
      * Update an existing workout
      */
     fun updateWorkout(workout: Workout) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO) {
             workoutRepository.updateWorkout(workout)
         }
@@ -43,6 +47,7 @@ class UpdateWorkoutViewModel(application: Application) : AndroidViewModel(applic
      * Delete workout builds for previously saved workout
      */
     fun deleteWorkoutBuildsForWorkout(workoutId: Int) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO) {
             workoutRepository.deleteWorkoutWorkoutBuild(workoutId)
         }
@@ -52,6 +57,7 @@ class UpdateWorkoutViewModel(application: Application) : AndroidViewModel(applic
      * Delete an existing workout
      */
     fun deleteWorkoutWithId(workoutId: Int) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO) {
             workoutRepository.deleteWorkoutWithId(workoutId)
         }

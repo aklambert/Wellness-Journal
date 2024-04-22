@@ -1,6 +1,5 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,22 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.ExerciseCheckboxListAdapter
-import com.example.wellnessjournal.ExerciseListAdapter
 import com.example.wellnessjournal.R
-import com.example.wellnessjournal.WorkoutListAdapter
-import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
 import com.example.wellnessjournal.databinding.FragmentAddWorkoutBinding
 import com.example.wellnessjournal.ui.fitness.exercises.ExercisesViewModel
 
+/**
+ * Fragment for entering workout information and saving a workout to the WellnessJournal database
+ */
 class AddWorkoutFragment : Fragment() {
 
     private var _binding: FragmentAddWorkoutBinding? = null
