@@ -36,6 +36,7 @@
             android:backgroundTint="@color/primary_color"
             android:hint="@string/enter_goal_description"
             android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

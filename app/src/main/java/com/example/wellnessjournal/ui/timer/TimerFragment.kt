@@ -119,10 +119,13 @@ class TimerFragment : Fragment() {
      * Start the timer
      */
     private fun startTimer(root: View, timerBtn: Button, prefs: SharedPreferences, time: Long) {
-
+        // Get view items on the display
         val editTextHours: TextView = root.findViewById(R.id.input_hours)
         val editTextMinutes: TextView = root.findViewById(R.id.input_minutes)
         val editTextSeconds: TextView = root.findViewById(R.id.input_seconds)
+        val labelHrs: TextView = root.findViewById(R.id.hours_label)
+        val labelMin: TextView = root.findViewById(R.id.minutes_label)
+        val labelS: TextView = root.findViewById(R.id.seconds_label)
 
         val colon1: TextView = root.findViewById(R.id.colon1)
         val colon2: TextView = root.findViewById(R.id.colon2)
@@ -134,6 +137,10 @@ class TimerFragment : Fragment() {
         editTextSeconds.visibility = View.GONE
         colon1.visibility = View.GONE
         colon2.visibility = View.GONE
+        labelHrs.visibility = View.GONE
+        labelMin.visibility = View.GONE
+        labelS.visibility = View.GONE
+
 
         // Show the button as a STOP TIMER button
         timerBtn.text = getString(R.string.stop_timer)
@@ -185,10 +192,13 @@ class TimerFragment : Fragment() {
         val editTextMinutes: EditText = root.findViewById(R.id.input_minutes)
         val editTextSeconds: EditText = root.findViewById(R.id.input_seconds)
 
-        // Get timer colon items and progress view TextView
+        // Get timer colon and label items and progress view TextView
         val colon1: TextView = root.findViewById(R.id.colon1)
         val colon2: TextView = root.findViewById(R.id.colon2)
         val timerProgressView: TextView = root.findViewById(R.id.timer_progress_view)
+        val labelHrs: TextView = root.findViewById(R.id.hours_label)
+        val labelMin: TextView = root.findViewById(R.id.minutes_label)
+        val labelS: TextView = root.findViewById(R.id.seconds_label)
 
         // Show the input items when the timer is stopped
         editTextHours.visibility = View.VISIBLE
@@ -196,6 +206,9 @@ class TimerFragment : Fragment() {
         editTextSeconds.visibility = View.VISIBLE
         colon1.visibility = View.VISIBLE
         colon2.visibility = View.VISIBLE
+        labelHrs.visibility = View.VISIBLE
+        labelMin.visibility = View.VISIBLE
+        labelS.visibility = View.VISIBLE
 
         // Show the button as a START TIMER button and hide the time remaining
         timer_btn.text = getString(R.string.start_timer)

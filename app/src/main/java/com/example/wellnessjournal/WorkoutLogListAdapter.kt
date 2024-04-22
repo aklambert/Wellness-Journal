@@ -57,6 +57,7 @@ class WorkoutLogListAdapter: RecyclerView.Adapter<WorkoutLogListAdapter.ViewHold
             val logItemWorkout = workouts[position]
             holder.textView.text = logItemWorkout.workoutName
             holder.imageView.setImageResource(R.drawable.checkmark_icon)
+            holder.imageView.visibility = View.VISIBLE
         }
         else {
             holder.textView.text = "Deleted workout"

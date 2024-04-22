@@ -51,14 +51,14 @@
             style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/text_margin"
             android:text="@string/name"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/update_exercise_title"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/text_margin"
-            />
+            tools:ignore="TextSizeCheck" />
 
         <Button
             android:id="@+id/btn_delete_exercise"
@@ -83,6 +83,7 @@
             android:gravity="center"
             android:hint="@string/exercise_name"
             android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -95,13 +96,14 @@
             style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
+            android:layout_margin="@dimen/input_horizontal_margin"
             android:text="@string/type"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_exercise_name"
             app:layout_constraintVertical_bias="0"
-            android:layout_margin="@dimen/input_horizontal_margin"/>
+            tools:ignore="TextSizeCheck" />
 
         <Spinner
             android:id="@+id/input_exercise_type"
@@ -124,14 +126,14 @@
             style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
-            android:text="@string/intensity"
-            app:layout_constraintTop_toBottomOf="@+id/input_exercise_type"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0"
             android:layout_margin="@dimen/input_horizontal_margin"
-            />
+            android:text="@string/intensity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_type"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="TextSizeCheck" />
 
         <EditText
             android:id="@+id/input_exercise_intensity"
@@ -139,10 +141,11 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Intensity"
-            android:gravity="center"
-            android:inputType="textMultiLine"
             android:backgroundTint="@color/primary_color"
+            android:gravity="center"
             android:hint="@string/exercise_intensity"
+            android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -155,14 +158,14 @@
             style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
-            android:text="@string/exercise_time"
-            app:layout_constraintTop_toBottomOf="@+id/input_exercise_intensity"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0"
             android:layout_margin="@dimen/input_horizontal_margin"
-            />
+            android:text="@string/exercise_time_prompt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_intensity"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="TextSizeCheck" />
 
         <EditText
             android:id="@+id/input_exercise_time"
@@ -170,10 +173,11 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Time/ Duration"
-            android:gravity="center"
-            android:inputType="textMultiLine"
             android:backgroundTint="@color/primary_color"
+            android:gravity="center"
             android:hint="@string/exercise_time"
+            android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -183,17 +187,17 @@
 
         <TextView
             android:id="@+id/tv_exercise_volume"
+            style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
-            android:text="@string/volume"
-            style="@style/style_header3"
-            app:layout_constraintTop_toBottomOf="@+id/input_exercise_time"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0"
             android:layout_margin="@dimen/input_horizontal_margin"
-            />
+            android:text="@string/volume"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_time"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="TextSizeCheck" />
 
         <EditText
             android:id="@+id/input_exercise_volume"
@@ -201,10 +205,11 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/input_horizontal_margin"
             android:autofillHints="Exercise Volume"
-            android:gravity="center"
-            android:inputType="textMultiLine"
             android:backgroundTint="@color/primary_color"
+            android:gravity="center"
             android:hint="@string/exercise_volume"
+            android:inputType="textMultiLine"
+            android:minHeight="@dimen/min_height"
             android:textColorHint="@color/hint_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -214,17 +219,17 @@
 
         <TextView
             android:id="@+id/tv_exercise_note"
+            style="@style/style_header3"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/min_height"
-            android:text="@string/notes"
-            style="@style/style_header3"
-            app:layout_constraintTop_toBottomOf="@+id/input_exercise_volume"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0"
             android:layout_margin="@dimen/input_horizontal_margin"
-            />
+            android:text="@string/notes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_exercise_volume"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="TextSizeCheck" />
 
         <EditText
             android:id="@+id/input_exercise_note"
