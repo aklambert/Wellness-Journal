@@ -2,14 +2,12 @@ package com.example.wellnessjournal.data
 
 import androidx.lifecycle.LiveData
 import com.example.wellnessjournal.data.daos.ExerciseDao
-import com.example.wellnessjournal.data.daos.WorkoutBuildDao
-import com.example.wellnessjournal.data.daos.WorkoutDao
 import com.example.wellnessjournal.data.entities.Exercise
-import com.example.wellnessjournal.data.entities.Workout
-import com.example.wellnessjournal.data.entities.WorkoutBuild
 
+/**
+ * Repository for methods accessing Dao methods for the Exercise Entity
+ */
 class ExerciseRepository(private val exerciseDao: ExerciseDao){
-
     // List of all saved exercises
     val listExercises: LiveData<List<Exercise>> = exerciseDao.getExercises()
 
@@ -35,10 +33,9 @@ class ExerciseRepository(private val exerciseDao: ExerciseDao){
     }
 
     /**
-     * Get exercise by id
+     * Get exercise by it's id
      */
     fun getExerciseById(exerciseId: Int): LiveData<Exercise> {
         return exerciseDao.getExerciseById(exerciseId)
     }
-
 }

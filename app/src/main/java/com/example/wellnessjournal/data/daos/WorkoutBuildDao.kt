@@ -2,63 +2,32 @@ package com.example.wellnessjournal.data.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Transaction
-import androidx.room.Update
 import com.example.wellnessjournal.data.entities.WorkoutBuild
-import com.example.wellnessjournal.data.entityrelations.WorkoutBuildWithExercise
-import com.example.wellnessjournal.data.entityrelations.WorkoutWithWorkoutBuild
 
+/**
+ * Data Access Object for WorkoutBuild Entity
+ */
 @Dao
 interface WorkoutBuildDao {
-    /**
-     * Insert WorkoutBuild
-     */
+    // Insert WorkoutBuild
     @Insert
     suspend fun insertWorkoutBuild(workoutBuild: WorkoutBuild)
 
-    /**
-     * Update WorkoutBuild
-     */
-    @Update
-    suspend fun updateWorkoutBuild(workoutBuild: WorkoutBuild)
-
-    /**
-     * Delete WorkoutBuild
-     */
-    @Delete
-    suspend fun deleteWorkoutBuild(workoutBuild: WorkoutBuild)
-
-    /**
-     * Delete WorkoutBuild for a certain workout
-     */
+    // Delete WorkoutBuild for a certain workout
     @Query("DELETE FROM workoutBuild WHERE workoutId = :workoutId")
     suspend fun deleteWorkoutBuildsForWorkout(workoutId: Int)
 
-    /**
-     * Get a list of all saved WorkoutBuilds
-     */
+    // Get a list of all saved WorkoutBuilds
     @Query ("SELECT * FROM workoutBuild ORDER BY workoutId")
     fun getWorkoutBuilds(): LiveData<List<WorkoutBuild>>
 
-    /**
-     * Get workout builds paired with exercises
-     */
-    @Transaction
-    @Query("SELECT * FROM exercise")
-    fun getWorkoutBuildWithExercise(): LiveData<List<WorkoutBuildWithExercise>>
-
-    /**
-     * Get workout builds for certain workout
-     */
+    // Get workout builds for certain workout
     @Query("SELECT * FROM workoutBuild WHERE workoutId = :workoutId")
     fun getWorkoutBuildsForWorkout(workoutId: Int): LiveData<List<WorkoutBuild>>
 
-    /**
-     * Get list of Workout Builds that have a certain exercise
-     */
+    // Get list of Workout Builds that have a certain exercise
     @Query("SELECT * FROM workoutBuild WHERE exerciseId = :exerciseId")
     fun getWorkoutBuildsWithExercise(exerciseId: Int): LiveData<List<WorkoutBuild>>
 }

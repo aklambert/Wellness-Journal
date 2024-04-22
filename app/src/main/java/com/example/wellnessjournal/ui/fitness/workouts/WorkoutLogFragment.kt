@@ -1,12 +1,10 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +13,9 @@ import com.example.wellnessjournal.R
 import com.example.wellnessjournal.WorkoutLogListAdapter
 import com.example.wellnessjournal.databinding.FragmentWorkoutLogBinding
 
+/**
+ * Fragment for Showing Saved Workout Logs
+ */
 class WorkoutLogFragment : Fragment() {
     private var _binding: FragmentWorkoutLogBinding? = null
     private val binding get() = _binding!!
@@ -55,7 +56,6 @@ class WorkoutLogFragment : Fragment() {
                 }
             }
         })
-
 
         return root
     }

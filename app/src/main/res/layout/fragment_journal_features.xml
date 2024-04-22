@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary_color_variant3"
     android:fillViewport="true"
-    android:paddingBottom="@dimen/bottom_margin"
+    android:paddingBottom="64dp"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,7 +53,7 @@
                 <ImageView
                     android:id="@+id/exercise_card_icon"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="60dp"
                     android:layout_margin="@dimen/activity_vertical_margin"
                     android:contentDescription="@string/journal_icon"
                     android:src="@drawable/journal_navigation_icon"
@@ -103,7 +103,7 @@
                 <ImageView
                     android:id="@+id/workout_card_icon"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="60dp"
                     android:layout_margin="@dimen/activity_vertical_margin"
                     android:contentDescription="@string/logo_weight_description"
                     android:src="@drawable/goal_icon"

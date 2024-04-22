@@ -10,23 +10,27 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wellnessjournal.data.entities.Exercise
-import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.ui.fitness.exercises.ExercisesFragmentDirections
 
 /**
- * Define custom adapter for RecyclerView for listing data items
+ * Define custom adapter for RecyclerView for listing exercises
  */
 class ExerciseListAdapter: RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>() {
+    // List of all saved exercises
     private var exercises = listOf<Exercise>()
 
-     // Setup ViewHolder(s) (view items used in each list item)
+    /**
+     *  Setup ViewHolder(s) (view items used in each list item such as TextViews, CheckBoxes, etc.)
+     */
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
          val textView: TextView = view.findViewById(R.id.list_item_txt)
          val textViewTitle: TextView = view.findViewById(R.id.list_item_text_title)
          val imageView: ImageView = view.findViewById(R.id.list_item_img)
     }
 
-    // Create new views for list items with the layout manager
+    /**
+     *  Create new views for list items with the layout manager
+     */
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
         val view = LayoutInflater.from(viewGroup.context)
@@ -35,10 +39,12 @@ class ExerciseListAdapter: RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>(
         return ViewHolder(view)
     }
 
-    // Replace the contents of the new list item with data
+    /**
+     * Replace the contents of the new list item with saved data
+     */
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
+        /* Get element from your dataset at this position and replace the
+            contents of the view with that element */
         val item = exercises[position]
         val name = item.exerciseName.toString()
         val intensity = item.exerciseIntensity.toString()
@@ -74,8 +80,8 @@ class ExerciseListAdapter: RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>(
 
         viewHolder.textView.text = cardInfo
 
+        // Listen for navigation from Exercises to UpdateExercise, to pass the current exercise data
         if (exercises.isNotEmpty()) {
-            // Listen for navigation from Exercises to UpdateExercise, to pass the current exercise data
             viewHolder.itemView.findViewById<ConstraintLayout>(R.id.list_item_constraintlayout).setOnClickListener {
                 val action = ExercisesFragmentDirections.actionNavigationExercisesToNavigationUpdateExercise(item)
                 viewHolder.itemView.findNavController().navigate(action)
@@ -83,14 +89,18 @@ class ExerciseListAdapter: RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>(
         }
     }
 
-    // Set data to use and display, and notify data was changed
+    /**
+     *  Set data to use and display, and notify data was changed
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun data(exercise: List<Exercise>) {
         this.exercises = exercise
         notifyDataSetChanged()
     }
 
-    // Get exercise list size
+    /**
+     * Get size of exercises list
+     */
     override fun getItemCount(): Int {
         return exercises.size
     }

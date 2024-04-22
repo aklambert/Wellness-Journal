@@ -10,6 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentFitnessBinding
 
+/**
+ * Fragment for showing all fitness related features and providing access to those features
+ */
 class FitnessFragment : Fragment() {
 
     private var _binding: FragmentFitnessBinding? = null

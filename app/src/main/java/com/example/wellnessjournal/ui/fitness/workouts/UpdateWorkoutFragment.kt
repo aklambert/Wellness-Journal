@@ -1,6 +1,5 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +22,9 @@ import com.example.wellnessjournal.data.entities.WorkoutBuild
 import com.example.wellnessjournal.databinding.FragmentUpdateWorkoutBinding
 import com.example.wellnessjournal.ui.fitness.exercises.ExercisesViewModel
 
+/**
+ * Fragment for updating workout information and saving it to the WellnessJournal database
+ */
 class UpdateWorkoutFragment : Fragment() {
 private var _binding: FragmentUpdateWorkoutBinding? = null
     private val savedWorkout by navArgs<UpdateWorkoutFragmentArgs>()

@@ -8,29 +8,24 @@ import androidx.room.Query
 import androidx.room.Update
 import com.example.wellnessjournal.data.entities.Goal
 
+/**
+ * Data Access Object for Goal Entity
+ */
 @Dao
 interface GoalDao {
-    /**
-     * Insert a goal item
-     */
+    // Insert a goal item
     @Insert
     suspend fun insertGoal(goal: Goal)
 
-    /**
-     * Update a goal item
-     */
+    // Update a goal item
     @Update
     suspend fun updateGoal(goal: Goal)
 
-    /**
-     * Delete a goal item
-     */
+    // Delete a goal item
     @Delete
     suspend fun deleteGoal(goal: Goal)
 
-    /**
-     * Get a list of all goals
-     */
+    // Get a list of all goals
     @Query("SELECT * FROM goal ORDER BY goalId")
     fun getGoals(): LiveData<List<Goal>>
 }

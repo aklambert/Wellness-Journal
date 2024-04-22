@@ -10,12 +10,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- Other Colors -->
-    <color name="dark_green">#1B5E20</color>
-    <color name="teal">#21B6A8</color>
-    <color name="light_teal">#FF44DDCF</color>
-    <color name="extra_light_teal">#B2CFCD</color>
-    <color name="mint_green">#A3EBB1</color>
-    <color name="medium_green">#18A558</color>
     <color name="danger">#CA112C</color>
     <color name="hint_color">#495AB6</color>
     <color name="info_color">#E5DFBD</color>

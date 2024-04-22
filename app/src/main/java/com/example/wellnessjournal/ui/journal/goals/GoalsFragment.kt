@@ -1,6 +1,5 @@
 package com.example.wellnessjournal.ui.journal.goals
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +15,9 @@ import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentGoalsBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
+/**
+ * Fragment for Viewing Saved Goals
+ */
 class GoalsFragment : Fragment() {
     private var _binding: FragmentGoalsBinding? = null
     private val binding get () = _binding!!

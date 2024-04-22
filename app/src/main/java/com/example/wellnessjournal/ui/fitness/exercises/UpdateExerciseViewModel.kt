@@ -13,6 +13,9 @@ import com.example.wellnessjournal.data.entities.WorkoutBuild
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for Methods/Variables Pertaining to Updating Exercises
+ */
 class UpdateExerciseViewModel(application: Application) : AndroidViewModel(application) {
     // Get ExerciseDao to access Exercise Table in database
     private val exerciseDao: ExerciseDao =
@@ -34,6 +37,7 @@ class UpdateExerciseViewModel(application: Application) : AndroidViewModel(appli
      * Update existing exercise
      */
     fun updateExercise(exercise: Exercise) {
+        // Access database in a different thread (not the main one)
         viewModelScope.launch(Dispatchers.IO) {
             exerciseRepo.updateExercise(exercise)
         }
@@ -43,6 +47,7 @@ class UpdateExerciseViewModel(application: Application) : AndroidViewModel(appli
      * Delete existing exercise
      */
     fun deleteExercise(exercise: Exercise) {
+        // Access database in a different thread (not the main one)
         viewModelScope.launch(Dispatchers.IO) {
             exerciseRepo.deleteExercise(exercise)
         }

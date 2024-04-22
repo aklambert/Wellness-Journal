@@ -3,7 +3,6 @@ package com.example.wellnessjournal.ui.fitness.workouts
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.wellnessjournal.data.WellnessJournalDatabase
 import com.example.wellnessjournal.data.WorkoutRepository
@@ -16,18 +15,19 @@ import com.example.wellnessjournal.data.entities.WorkoutLog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * ViewModel for Methods/Variables Pertaining to Viewing or Deleting Workout Logs
+ */
 class WorkoutLogViewModel(application: Application) : AndroidViewModel(application) {
-    // Get related Daos
+    // Get workout related Daos
     private val workoutBuildDao: WorkoutBuildDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutBuildDao()!!
     private val workoutDao: WorkoutDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutDao()!!
-    private val exerciseDao: ExerciseDao =
-        WellnessJournalDatabase.getDatabase(application)?.ExerciseDao()!!
     private val workoutLogDao: WorkoutLogDao =
         WellnessJournalDatabase.getDatabase(application)?.WorkoutLogDao()!!
 
-    // Get repositories
+    // Get workout repository
     private val workoutRepository: WorkoutRepository = WorkoutRepository(workoutDao, workoutBuildDao,
         workoutLogDao)
 
@@ -45,17 +45,9 @@ class WorkoutLogViewModel(application: Application) : AndroidViewModel(applicati
      * Delete a workout log
      */
     fun deleteWorkoutLog(workoutLog: WorkoutLog) {
+        // Access database in a different thread
         viewModelScope.launch(Dispatchers.IO) {
             workoutRepository.deleteWorkoutLog(workoutLog)
-        }
-    }
-
-    /**
-     * Update a workout log
-     */
-    fun updateWorkoutLog(workoutLog: WorkoutLog) {
-        viewModelScope.launch(Dispatchers.IO){
-            workoutRepository.updateWorkoutLog(workoutLog)
         }
     }
 }

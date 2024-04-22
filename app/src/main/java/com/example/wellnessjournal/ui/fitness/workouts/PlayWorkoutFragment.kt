@@ -1,6 +1,5 @@
 package com.example.wellnessjournal.ui.fitness.workouts
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,15 +13,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
-import com.example.wellnessjournal.ExerciseCheckboxListAdapter
 import com.example.wellnessjournal.ExercisesForWorkoutListAdapter
 import com.example.wellnessjournal.R
-import com.example.wellnessjournal.data.entities.Exercise
 import com.example.wellnessjournal.data.entities.WorkoutLog
 import com.example.wellnessjournal.databinding.FragmentPlayWorkoutBinding
 import java.time.LocalDate
 
+/**
+ * Fragment for showing a selected workout to complete
+ */
 class PlayWorkoutFragment : Fragment() {
     private var _binding: FragmentPlayWorkoutBinding? = null
     private val workout by navArgs<PlayWorkoutFragmentArgs>()

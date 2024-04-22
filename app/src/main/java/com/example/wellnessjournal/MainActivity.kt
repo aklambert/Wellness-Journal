@@ -9,6 +9,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.wellnessjournal.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+/**
+ * Main Activity for the app
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -33,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_journal_features
             )
         )
-
+        // Navigation Controller Setup
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         val currentNavPosition = navController.currentDestination
@@ -51,7 +54,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Set up the back button to go to the previous fragment
+    /**
+     * Set up the back button to go to the previous fragment
+     */
     override fun onSupportNavigateUp(): Boolean {
         val navigationController = findNavController(R.id.nav_host_fragment_activity_main)
         return navigationController.navigateUp()

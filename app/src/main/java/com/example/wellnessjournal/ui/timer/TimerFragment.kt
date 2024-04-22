@@ -16,12 +16,13 @@ import androidx.fragment.app.Fragment
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentTimerBinding
 
+/**
+ * Fragment for the timer feature
+ */
 class TimerFragment : Fragment() {
 
     private var _binding: FragmentTimerBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var timer: CountDownTimer
 
@@ -39,11 +40,11 @@ class TimerFragment : Fragment() {
         // Initialize timer
         timer = object : CountDownTimer(0, 1) {
             override fun onTick(millisUntilFinished: Long) {
-                // do nothing
+                // do nothing for now
             }
 
             override fun onFinish() {
-                // do nothing
+                // do nothing for now
             }
         }
 
@@ -179,11 +180,12 @@ class TimerFragment : Fragment() {
      * Cancel the timer
      */
      private fun stopTimer(root: View, timer_btn: Button, prefs: SharedPreferences) {
-
+        // Get timer EditText items
         val editTextHours: EditText = root.findViewById(R.id.input_hours)
         val editTextMinutes: EditText = root.findViewById(R.id.input_minutes)
         val editTextSeconds: EditText = root.findViewById(R.id.input_seconds)
 
+        // Get timer colon items and progress view TextView
         val colon1: TextView = root.findViewById(R.id.colon1)
         val colon2: TextView = root.findViewById(R.id.colon2)
         val timerProgressView: TextView = root.findViewById(R.id.timer_progress_view)
@@ -210,25 +212,6 @@ class TimerFragment : Fragment() {
         val prefsEditor: SharedPreferences.Editor = prefs.edit()
         prefsEditor.putBoolean("timer_running", false)
         prefsEditor.apply()
-    }
-
-    /**
-     * Enable START TIMER button if there is an entered time value, otherwise disable it.
-     * This is for when a timer is not running.
-     */
-    private fun startTimerEnableDisable(btn: Button, time: Long) {
-        if (time == 0.toLong()) {
-            btn.isEnabled = false
-            btn.isClickable = false
-            context?.let { ContextCompat.getColor(it, R.color.primary_color_variant1) }
-                ?.let { btn.setBackgroundColor(it) }
-        }
-        else {
-            btn.isEnabled = true
-            btn.isClickable = true
-            context?.let { ContextCompat.getColor(it, R.color.primary_color) }
-                ?.let { btn.setBackgroundColor(it) }
-        }
     }
 
     override fun onDestroyView() {

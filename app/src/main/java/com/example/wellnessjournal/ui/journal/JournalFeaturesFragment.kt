@@ -1,6 +1,5 @@
 package com.example.wellnessjournal.ui.journal
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.wellnessjournal.R
 import com.example.wellnessjournal.databinding.FragmentJournalFeaturesBinding
 
+/**
+ * Fragment for showing journal related features, and providing access to those features
+ */
 class JournalFeaturesFragment : Fragment() {
     private var _binding: FragmentJournalFeaturesBinding? = null
     private val binding get() = _binding!!

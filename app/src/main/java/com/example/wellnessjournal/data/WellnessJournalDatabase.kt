@@ -19,12 +19,24 @@ import com.example.wellnessjournal.data.entities.Workout
 import com.example.wellnessjournal.data.entities.WorkoutBuild
 import com.example.wellnessjournal.data.entities.WorkoutLog
 
+/**
+ * Database construction
+ */
 @Database(
-    entities = [Exercise::class, ExerciseType::class, WorkoutBuild::class, Workout::class, ReflectionJournal::class,
-               WorkoutLog::class, Goal::class],
+    entities = [Exercise::class,
+                ExerciseType::class,
+                WorkoutBuild::class,
+                Workout::class,
+                ReflectionJournal::class,
+                WorkoutLog::class, Goal::class],
     version = 6
 )
+
+/**
+ * Database class Definition
+ */
 abstract class WellnessJournalDatabase : RoomDatabase() {
+    // All Daos
     abstract fun ExerciseDao(): ExerciseDao
     abstract fun ExerciseTypeDao(): ExerciseTypeDao
     abstract fun WorkoutBuildDao(): WorkoutBuildDao
@@ -40,12 +52,15 @@ abstract class WellnessJournalDatabase : RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE: WellnessJournalDatabase? = null
+
         /**
          * Get instance of database, or create one if it doesn't exist
          */
         fun getDatabase(context: Application): WellnessJournalDatabase? {
 
             if (INSTANCE == null) {
+
+                // Make sure this only runs on one thread
                 synchronized(this) {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
