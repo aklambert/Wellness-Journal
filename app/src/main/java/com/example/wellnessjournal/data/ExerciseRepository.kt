@@ -33,7 +33,7 @@ class ExerciseRepository(private val exerciseDao: ExerciseDao){
     }
 
     /**
-     * Get exercise by it's id
+     * Get exercise by its id
      */
     fun getExerciseById(exerciseId: Int): LiveData<Exercise> {
         return exerciseDao.getExerciseById(exerciseId)
